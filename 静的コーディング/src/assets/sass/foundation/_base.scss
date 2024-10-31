@@ -1,0 +1,14 @@
+@use "../global" as g;
+
+body {
+  color: ;
+  font-family: ;
+  font-size: ;
+  font-weight: ;
+  background-color: ;
+  line-height: ;
+
+  &.is-fixed {
+    overflow: hidden;
+  }
+}

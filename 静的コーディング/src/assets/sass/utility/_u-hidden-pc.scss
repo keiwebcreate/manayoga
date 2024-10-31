@@ -1,0 +1,7 @@
+@use "../global" as g;
+
+.u-hidden-pc {
+  @include mixin.mq(md) {
+    display: none;
+  }
+}

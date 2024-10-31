@@ -1,0 +1,10 @@
+@use "../global/variables";
+@use "../global/mixin";
+
+.u-width-285px {
+  width: 285px;
+
+  @include mixin.mq("lg") {
+    // width: 280px;
+  }
+} 

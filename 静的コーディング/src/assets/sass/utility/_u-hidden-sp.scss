@@ -1,0 +1,9 @@
+@use "../global" as g;
+
+.u-hidden-sp {
+  display: none !important;
+
+  @include mixin.mq("md") {
+    display: inline-block !important;
+  }
+}

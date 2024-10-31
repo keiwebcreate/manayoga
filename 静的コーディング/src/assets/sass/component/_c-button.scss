@@ -1,0 +1,44 @@
+@use "../global" as g;
+
+.c-button {
+
+}
+
+.c-button--default {
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: ;
+  color: ;
+  font-weight: ;
+  border: ;
+  background-color: ;
+  transition: ;
+
+  &:hover {
+    
+  }
+}
+
+
+.c-button--primary {
+  color: ;
+  background-color: ;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: ;
+  font-weight: ;
+  position: ;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: ;
+  text-align: ;
+
+  &:disabled {
+    background-color: rgba(239, 239, 239, 0.3);
+    color: rgba(16, 16, 16, 0.3),;
+    pointer-events: none;
+  }
+
+  &:hover {
+}
+}

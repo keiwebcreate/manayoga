@@ -1,0 +1,15 @@
+@use "../global" as g;
+
+.u-left-50p {
+  left: 50%;
+}
+
+.u-left-50p--minus-5px-sp {
+  left: calc(50% - 5px) !important;
+  transform: translateX(-50%) translateY(-50%) !important;
+}
+
+.u-left-50p--plus-5px-pc {
+  left: calc(50% + 5px) !important;
+  transform: translateX(-50%) translateY(-50%) !important;
+}

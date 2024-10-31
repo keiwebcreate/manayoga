@@ -1,0 +1,24 @@
+@use "../global" as g;
+
+.swiper-pagination-bullet {
+
+}
+.swiper-pagination-bullet-active {
+
+}
+
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+.swiper-slide-active .p-main-visual-swiper__slide-image img,
+.swiper-slide-duplicate-active .p-main-visual-swiper__slide-image img,
+.swiper-slide-prev .p-main-visual-swiper__slide-image img {
+  animation: zoomUp 9s linear 0s;
+  animation-fill-mode: both;
+  animation-direction: normal;
+}

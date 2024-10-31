@@ -1,0 +1,8 @@
+@use "../global" as g;
+
+.u-width-280px-pc {
+
+  @include mixin.mq("md") {
+    width: 280px;
+  }
+} 
