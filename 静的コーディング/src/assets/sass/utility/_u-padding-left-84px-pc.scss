@@ -1,7 +1,0 @@
-@use "../global" as g;
-
-.u-padding-left-84px-pc {
-  @include mixin.mq("lg") {
-    padding-left: 84px;
-  }
-}

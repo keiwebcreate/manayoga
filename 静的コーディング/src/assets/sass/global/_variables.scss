@@ -1,28 +1,43 @@
 //  fonts
-$font-family-base: ;
+$font-family-ja: "Noto Sans JP", sans-serif;
+$font-family-en: "Lato", sans-serif;
 
 
 // text-color
-$text-color-main: ;
-$text-color-sub: ;
+$text-color-main: #332C2F;
+$text-color-sub: #F5F5F5;
 
 // color
-$main-color: ;
-$base-color-: ;
-$accent-color: ;
-$disabled-color: ;
+$main-color: #FCBFD1;
+$base-color: #F5F5F5;
+$accent-color: #2A367D;
+$gray-color-thick: #A6A9A7;
+$gray-color-thin: #EBECEB;
+$sub-color1: #FEEBF1;
+$sub-color2: #E0C8E9;
+
+// font-size
+$baseFontSize: 16px;
+
 
 // font-weight
-$font-weight-: ;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-500: 600;
+$font-weight-700: 700;
 
 // line-height
-$line-height-base: ;
+$line-height-base: 1.5;
+$line-height-small: 1;
+$line-height-middle: 1.8;
+$line-height-large: 2;
+
 
 // breakpoint
 $breakpoints: (
   sm: "screen and (min-width: 600px)",
   md: "screen and (min-width: 768px)",
   lg: "screen and (min-width: 900px)",
-  xl: "screen and (min-width: 1100px)",
-  xxl: "screen and (min-width: 1280px)",
+  xl: "screen and (min-width: 1200px)",
+  xxl: "screen and (min-width: 1440px)",
 );

@@ -1,12 +1,12 @@
 @use "../global" as g;
 
 body {
-  color: ;
-  font-family: ;
-  font-size: ;
-  font-weight: ;
-  background-color: ;
-  line-height: ;
+  color: g.$text-color-main;
+  font-family: g.$font-family-ja;
+  font-size: g.$baseFontSize;
+  font-weight: g.$font-weight-400;
+  background-color: g.$text-color-sub;
+  line-height: g.$line-height-base;
 
   &.is-fixed {
     overflow: hidden;

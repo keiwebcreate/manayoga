@@ -1,17 +1,1 @@
-@use "../global/variables";
-@use "../global/mixin";
-
-.c-section-heading {
- 
-}
-
-.c-section-heading__en {
-  font-size: ;
-  font-family: ;
-  font-weight: ;
-}
-
-.c-section-heading__ja {
-  font-size: ;
-  font-weight: ;
-}
+@use "../global" as g;
