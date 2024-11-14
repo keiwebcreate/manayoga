@@ -1,0 +1,84 @@
+@use "sass:math";
+
+// font-sizeをpxからremに変更する関数
+@function rem($size, $base: 16) {
+  @return math.div($size, $base) * 1rem;
+}
+
+// line-heightをfont-sizeとデザインデータの数字から計算する
+@function lh($size, $fontSize) {
+  @return math.div($size, $fontSize);
+}
+
+// letter-spacingをデザインデータの数字から計算する
+@function spacing($size) {
+  @return math.div($size, 1000) * 1em;
+}
+
+// SPデザインでfont-sizeをVW単位にする
+@function get_vw($size, $vp: 375) {
+  $rate: math.div(100, $vp);
+  @return $rate * $size * 1vw;
+}
+
+// タブレットの最大幅をベースに設定する
+// ※この関数は上限が決まっている場合にのみ使用する
+$baseWidth: 1024;
+@function vw($pixelsVw) {
+  @return math.div($pixelsVw, $baseWidth) * 100vw;
+}
+
+/*----------------------------------
+    レスポンシブ用クランプ関数
+    1440pxのvwで画面幅を縮め、画面幅768pxまでデザインを維持したい時
+    768pxでは極端に小さくなるため、ここでは960pxの値を維持させる
+-----------------------------------*/
+@function res-clamp($px) {
+  $viewportWidth-pc: 1440px;
+  $viewportWidth-res: 960px;
+  $vw-pc: math.div($px, $viewportWidth-pc) * 100;
+  $res-md: math.div($px * $viewportWidth-res, $viewportWidth-pc);
+  // @return clamp(#{$res-md}, #{$vw-pc} vw, #{$px});
+  @return clamp($res-md, $vw-pc * 1vw, $px);
+}
+
+/*----------------------------------
+clamp-vw関数
+VWでフォントサイズを制限する関数
+$min-font: 最小フォントサイズ（px）
+$max-font: 最大フォントサイズ（px）
+$min-viewport: VW最小値（初期値: 320px）
+$max-viewport: VW最大値（初期値: 1024px）
+-----------------------------------*/
+
+@function clamp-vw(
+  $min-font,
+  $max-font,
+  $min-viewport: 320,
+  $max-viewport: 1024
+) {
+  // ベースフォントサイズ（固定）
+  $baseFontSize: 16;
+  // 小数点以下の表示桁数（例：1000 ▶ 0.000、10 ▶ 0.0）
+  $decimalPoint: 1000;
+  // フォントサイズ変化率計算
+  $variable: math.div($max-font - $min-font, $max-viewport - $min-viewport);
+  // 定数計算
+  $constant: math.div($max-font - $max-viewport * $variable, $baseFontSize);
+  // 最小フォントサイズをrem単位に変換
+  $min-font-rem: math.div($min-font, $baseFontSize) * 1rem;
+  // 最大フォントサイズをrem単位に変換
+  $max-font-rem: math.div($max-font, $baseFontSize) * 1rem;
+  // 変化率をrem単位に変換
+  $variable-rem: math.div(
+    round($constant * 1rem * $decimalPoint),
+    $decimalPoint
+  );
+  // VW単位に変換した変化率
+  $variable-vw: math.div(
+    round(100 * $variable * 1vw * $decimalPoint),
+    $decimalPoint
+  );
+  // 算出したrem単位の数値をclamp関数に代入して返す
+  @return clamp($min-font-rem, $variable-rem + $variable-vw, $max-font-rem);
+}

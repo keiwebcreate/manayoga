@@ -1,0 +1,27 @@
+@use "../global/" as *;
+
+html {
+}
+
+body {
+  width: 100%;
+  font-family: $font-family-ja;
+  font-weight: 400;
+  font-size: get_vw(16);
+  line-height: $line-height-base;
+  color: map-get($color, text);
+  background-color: map-get($color, 'base');
+
+  @include mq(md) {
+    letter-spacing: normal;
+    font-size: rem(14);
+  }
+}
+
+summary {
+  list-style-type: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
