@@ -26,7 +26,7 @@ const distBase = "./dist";
 
 const srcPath = {
   scss: srcBase + "/scss/**/*.scss",
-  img: srcBase + "/images/**/*.{png,jpg,jpeg,svg,gif,ico,mp4,webp}",
+  img: srcBase + "/img/**/*.{png,jpg,jpeg,svg,gif,ico,mp4,webp}",
   js: srcBase + "/js/*.js",
   php: srcBase + "/**/*.php",
   html: srcBase + "/**/*.html",
@@ -34,7 +34,7 @@ const srcPath = {
 
 const distPath = {
   css: distBase + "/assets/css/",
-  img: distBase + "/assets/images/",
+  img: distBase + "/assets/img/",
   js: distBase + "/assets/js/",
   php: distBase + "/",
   html: distBase + "/",
