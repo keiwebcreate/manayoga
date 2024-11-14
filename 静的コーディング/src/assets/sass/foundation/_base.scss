@@ -1,14 +1,27 @@
-@use "../global" as g;
+@use "../global/" as *;
+
+html {
+}
 
 body {
-  color: g.$text-color-main;
-  font-family: g.$font-family-ja;
-  font-size: g.$baseFontSize;
-  font-weight: g.$font-weight-400;
-  background-color: g.$text-color-sub;
-  line-height: g.$line-height-base;
+  width: 100%;
+  font-family: $font-family-ja;
+  font-weight: 400;
+  font-size: get_vw(16);
+  line-height: $line-height-base;
+  color: map-get($color, text);
+  background-color: map-get($color, 'base');
 
-  &.is-fixed {
-    overflow: hidden;
+  @include mq(md) {
+    letter-spacing: normal;
+    font-size: rem(14);
   }
+}
+
+summary {
+  list-style-type: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }

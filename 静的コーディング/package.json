@@ -1,32 +1,42 @@
 {
-  "name": "new_curriculum",
+  "name": "webpack-gulp-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "## 使用環境",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kokitanshio/webpack-gulp-template.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "browser-sync": "^2.29.3",
-    "css-declaration-sorter": "^7.1.1",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-html-beautify": "^1.0.1",
-    "gulp-if": "^3.0.0",
-    "gulp-ignore": "^3.0.0",
-    "gulp-merge-media-queries": "^0.2.1",
-    "gulp-postcss": "^9.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-uglify": "^3.0.2",
-    "postcss": "^8.4.32",
-    "sass": "^1.69.5"
+  "bugs": {
+    "url": "https://github.com/kokitanshio/webpack-gulp-template/issues"
   },
-  "browserslist": [
-    "defaults"
-  ]
+  "homepage": "https://github.com/kokitanshio/webpack-gulp-template#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "css-loader": "^6.8.1",
+    "css-mqpacker": "^7.0.0",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-changed": "^4.0.3",
+    "gulp-dart-sass": "^1.1.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
+    "gulp-sass-glob-use-forward": "^0.1.3",
+    "gulp-webp": "^4.0.1",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.2"
+  },
+  "dependencies": {
+    "core-js": "^3.32.2"
+  }
 }
