@@ -1,0 +1,45 @@
+@use "../global/" as global;
+
+.u-hide {
+  display: block;
+  @include global.mq() {
+    display: none;
+  }
+}
+
+.u-show {
+  display: none;
+  @include global.mq() {
+    display: block;
+  }
+}
+
+.u-hide--inline {
+  display: inline-block;
+  @include global.mq() {
+    display: none;
+  }
+}
+
+.u-show--inline {
+  display: none;
+  @include global.mq() {
+    display: inline-block;
+  }
+}
+
+.u-hidden-pc {
+  display: block;
+
+  @include global.mq(md) {
+    display: none;
+  }
+}
+
+.u-hidden-sp {
+  display: none;
+
+  @include global.mq(md) {
+    display: block;
+  }
+}
