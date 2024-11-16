@@ -25,10 +25,10 @@ const srcBase = "./src";
 const distBase = "./public";
 
 const srcPath = {
-  scss: srcBase + "/sass/**/*.scss",
-  img: srcBase + "/img/**/*.{png,jpg,jpeg,svg,gif,ico,mp4,webp}",
-  js: srcBase + "/js/*.js",
-  php: srcBase + "/**/*.php",
+  scss: srcBase + "/assets/sass/**/*.scss",
+  img: srcBase + "/assets/img/**/*.{png,jpg,jpeg,svg,gif,ico,mp4,webp}",
+  js: srcBase + "/assets/js/*.js",
+  php: srcBase + "/assets/**/*.php",
   html: srcBase + "/**/*.html",
 };
 

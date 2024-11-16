@@ -1,52 +1,61 @@
 @use "../global" as *;
 
-.l-about {
-
-}
-
 .p-about {
-
 }
 
 .p-about__head {
-
+  display: flex;
+  flex-direction: column;
+  padding-top: 28px;
+  padding-bottom: 29px;
+  padding-left: calc(27px / 375px * 100vw);
+  background-image: url(../img/about/about-head-bg-01-SP.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: calc(280px / 375px * 100vw);
 }
 
 .p-about__head-en {
+  font-family: $font-family-en;
+  font-size: get_vw(40);
+  font-weight: $font-weight-600;
+  letter-spacing: calc(1.2px / 375px * 100vw);
 
 }
 
 .p-about__head-ja {
-
+  font-size: get_vw(20);
+  font-weight: $font-weight-500;
 }
 
 .p-about__breadcrumbs {
-
-}
-
-.home {
-
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: calc(24px / 375px * 100vw);
+  font-size: get_vw(15);
+  line-height: 1.6;
+  display: flex;
+  gap: 5px;
 }
 
 .p-about__inner {
-
+  padding-left: calc(22px / 375px * 100vw);
+  padding-right: calc(21px / 375px * 100vw);
 }
 
 .p-about__content {
-
+  margin-top: 20px;
 }
 
 .p-about__blocks {
-
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .p-about__block {
-
 }
 
 .p-about__CEO-message {
-
 }
-
-
-
