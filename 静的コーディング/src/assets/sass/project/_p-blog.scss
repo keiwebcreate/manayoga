@@ -1,54 +1,106 @@
 @use "../global" as *;
 
 .p-blog {
-
 }
 
 .p-blog__head {
+  display: flex;
+  flex-direction: column;
+  padding-top: 28px;
+  padding-bottom: 29px;
+  padding-left: calc(27px / 375px * 100vw);
+  background-image: url(../img/about/about-head-bg-01-SP.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: calc(280px / 375px * 100vw);
 
+  @include mq("md") {
+    background-image: url(../img/about/about-head-bg-01-PC.svg);
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 66px;
+    padding-bottom: 66px;
+    padding-left: calc(121px / 1440px * 100vw);
+    width: calc(872px / 1440px * 100vw);
+    max-width: 872px;
+    align-items: center;
+  }
+
+  @include mq("xxl") {
+    padding-left: 121px;
+  }
 }
 
 .p-blog__head-en {
+  font-family: $font-family-en;
+  font-size: get_vw(40);
+  font-weight: $font-weight-600;
+  letter-spacing: calc(1.2px / 375px * 100vw);
 
+  @include mq("md") {
+    font-size: rem(60);
+    font-weight: $font-weight-700;
+    letter-spacing: normal;
+  }
 }
 
 .p-blog__head-ja {
+  font-size: get_vw(20);
+  font-weight: $font-weight-500;
 
+  @include mq("md") {
+    font-size: rem(24);
+    font-weight: $font-weight-700;
+  }
 }
 
 .p-blog__breadcrumbs {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: calc(24px / 375px * 100vw);
+  font-size: get_vw(15);
+  line-height: 1.6;
+  display: flex;
+  gap: 5px;
 
-}
+  @include mq("md") {
+    padding-left: calc(50px / 1440px * 100vw);
+    font-size: rem(16);
+  }
 
-.home {
-
+  @include mq("md") {
+    padding-left: 50px;
+  }
 }
 
 .p-blog__inner {
-
+  padding-left: calc(23px / 375px * 100vw);
+  padding-right: calc(22px / 375px * 100vw);
+  background-color: map-get($color, sub1);
 }
 
 .p-blog__content {
-
 }
 
 .p-blog__list {
-
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
 }
 
 .p-blog__item {
-
+  width: 100%;
 }
 
 .p-blog__link {
-
+  display: block;
 }
 
 .p-blog__card {
-
 }
 
 .c-pagination {
-
+  padding-bottom: 40px;
 }
-

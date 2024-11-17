@@ -1,25 +1,46 @@
 @use "../global" as *;
 
 .p-blog-card {
-
+  width: 100%;
 }
 
 .p-blog-card__thumbnail {
+  width: 100%;
 
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .p-blog-card__date {
-
+  display: block;
+  margin-top: 4px;
+  font-family: $font-family-en;
+  font-size: get_vw(15);
+  font-weight: $font-weight-500;
+  line-height: normal;
 }
 
 .p-blog-card__title {
-
+  margin-top: 4px;
+  font-size: get_vw(15);
+  line-height: 1.6;
 }
 
 .p-blog-card__tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 
 }
 
 .p-blog-card__tag-item {
-
+  padding-inline: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: map-get($color, base);
+  border-radius: 20px;
+  color: map-get($color, accent);
+  font-size: get_vw(13);
 }
