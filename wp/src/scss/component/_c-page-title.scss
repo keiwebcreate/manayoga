@@ -1,0 +1,58 @@
+@use "../global/" as *;
+
+.c-page-title {
+    width: calc(280 / 375 * 100%);
+    height: auto;
+    aspect-ratio: 280 / 147;
+    background: linear-gradient(90deg, #FCBFD1 0%, #E0C8E9 100%);
+    position: relative;
+    margin-block-start: rem(55);
+
+    @include mq('md') {
+        width: clamp_vw(576, 872, 768, 1440);
+        height: 226px;
+        aspect-ratio: auto;
+        margin-block-start: rem(80);
+    }
+    @include mq('xxl') {
+        width: calc(872px + (100% - 1440px) / 2);
+    }
+    
+    &__wrap {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: get_vw(27);
+
+        @include mq('md') {
+            left: rem(121);
+            display: flex;
+            align-items: center;
+            left: max(clamp_vw(27, 121, 768, 1440), calc(121px + (100vw - 1440px) / 2));
+        }
+        
+        .title-en {
+            font-family: $font-family-en;
+            font-size: get_vw(40);
+            font-weight: 600;
+            letter-spacing: 0.7px;
+
+            @include mq('md') {
+                font-size: rem(60);
+                font-weight: 700;
+                letter-spacing: normal;
+            }
+        }
+        
+        .title-ja {
+            font-size: get_vw(20);
+            font-weight: 500;
+
+            @include mq('md') {
+                font-size: rem(24);
+                font-weight: 700;
+                margin-inline-start: rem(20);
+            }
+        }
+    }
+}

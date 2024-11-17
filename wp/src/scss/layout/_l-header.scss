@@ -17,7 +17,7 @@
         display: flex;
         height: 100%;
         align-items: center;
-        padding-inline: rem(5) rem(13);
+        padding-inline: rem(1) rem(13);
 
         @include mq('md') {
             padding-inline: rem(38) rem(70);
@@ -139,6 +139,7 @@
             width: 196px;
             padding-block: rem(15);
             border-radius: var(--magin-3, 8px);
+            margin-inline-start: rem(30);
             
             span {
                 margin-inline-start: rem(10);

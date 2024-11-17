@@ -9,6 +9,8 @@ function my_setup() {
   add_theme_support('title-tag');
   // 出力をhtml
   add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script'));
+  // 抜粋機能追加
+  add_post_type_support('page', 'excerpt');
 }
 add_action("after_setup_theme", "my_setup");
 
