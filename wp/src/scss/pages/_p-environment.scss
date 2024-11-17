@@ -1,0 +1,183 @@
+@use "../global/" as *;
+
+.p-environment {
+    margin-block-start: get_vw(-10);
+    padding-block-end: get_vw(60);
+    position: relative;
+    
+    @include mq('md') {
+        max-width: 1440px;
+        margin-block-start: 0;
+        padding-block-end: rem(120);
+    }
+    
+    &__fv {
+        display: flex;
+        flex-direction: column;
+        gap: get_vw(15);
+
+        @include mq('md') {
+            position: relative;
+            width: calc(100% + 50px);
+            right: 0;
+            top: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: end;
+            gap: rem(48);
+        }
+    }
+    
+    &__fv-pc-wrap {
+        display: contents;
+
+        @include mq('md') {
+            display: block;
+            width: min(get_vw(497,1100),497px);
+        }
+        
+        .fv-title {
+            font-size: get_vw(24);
+            font-weight: 500;
+            line-height: 1.8;
+            order: 1;
+            text-align: center;
+
+            span {
+                font-size: get_vw(63.936);
+                font-weight: 700;
+                color: map-get($color, 'main');
+            }
+
+            @include mq('md') {
+                font-size: min(get_vw(40,1290),40px);
+                font-weight: 700;
+                line-height: 1.5;
+                margin-block-start: rem(2);
+
+                span {
+                    font-size: min(get_vw(96,1290),96px);
+                }
+            }
+        }
+        
+        .fv-text {
+            order: 3;
+            font-size: get_vw(15);
+            line-height: 1.6;
+            margin-block-start: get_vw(10);
+
+            @include mq('md') {
+                font-size: rem(15);
+                font-weight: 500;
+                line-height: normal;
+                margin-block-start: rem(5);
+            }
+        }
+    
+    }
+    
+    &__fv-img {
+        order: 2;
+
+        img {
+            border-radius: var(--magin-6, 20px);
+        }
+
+        @include mq('md') {
+            width: calc(746 / 1290 * 100%);
+            max-width: 746px;
+
+            img {
+                border-radius: 0;
+            }
+        }
+    }
+    
+    &__point-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: get_vw(60);
+        margin-block-start: get_vw(62);
+
+        @include mq('md') {
+            margin-block-start: rem(119.67);
+            max-width: 911px;
+            margin-inline: auto;
+            gap: rem(60);
+        }
+    }
+    
+    &__point {
+
+        @include mq('md') {
+            display: flex;
+            align-items: center;
+
+            &:nth-child(2n) {
+                flex-direction: row-reverse;
+            }
+        }
+        
+        .point-img {
+            width: get_vw(240.217);
+            height: get_vw(218);
+            margin-inline: auto;
+            position: relative;
+
+            span {
+                position: absolute;
+                font-family: "Oooh Baby", "Noto Sans JP", sans-serif;
+                font-size: get_vw(80);
+                top: get_vw(-37);
+                left: get_vw(-40);
+            }
+
+            @include mq('md') {
+                width: 240.217px;
+                height: 218px;
+
+                span {
+                    font-size: rem(80);
+                    top: rem(-43);
+                    left: rem(-40);
+                }
+            }
+        }
+        
+        .point-text {
+            margin-block-start: get_vw(-12);
+
+            h3 {
+                font-size: get_vw(20);
+                font-weight: 500;
+            }
+            p {
+                margin-block-start: get_vw(12);
+                font-size: get_vw(15);
+                line-height: 1.6;
+            }
+
+            @include mq('md') {
+                margin-block-start: 0;
+                width: calc(100% - 240.217px);
+
+                h3 {
+                    font-size: min(get_vw(32,1011),32px);
+                }
+                p {
+                    margin-block-start: rem(20);
+                    font-size: rem(15);
+                    line-height: 1.6;
+                }
+            }
+        }
+
+        &:nth-child(n + 3) {
+            .point-text {
+                margin-block-start: 0;
+            }
+        }
+    }
+}
+
