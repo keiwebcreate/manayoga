@@ -30,7 +30,7 @@
         a {
             width: get_vw(260);
             display: inline-block;
-            padding-block: get_vw(15);
+            padding-block: get_vw(17);
             text-align: center;
             background-color: map-get($color, 'accent');
             border-radius: 8px;
@@ -42,7 +42,7 @@
                 margin-inline-start: get_vw(10);
                 svg {
                     width: get_vw(16);
-                    vertical-align: middle;
+                    vertical-align: 4px;
                 }
             }
     
@@ -57,6 +57,7 @@
                     margin-inline-start: rem(10);
                     svg {
                         width: 19px;
+                        vertical-align: 2px;
                     }
                 }
             }
@@ -70,16 +71,17 @@
         @include mq('md') {
             background: url(../img/common/bg-footer-pc.webp) no-repeat 80% center / cover;
             padding-inline: rem(50);
-            padding-block: rem(79) rem(51);
+            padding-block: rem(76) rem(51);
         }
     }
     
     &__wrap {
         display: flex;
         justify-content: center;
+        margin-inline-start: get_vw(-30);
         
         @include mq('lg') {
-            max-width: 951px;
+            max-width: 909px;
             justify-content: space-between;
             margin-inline: auto;
         }
@@ -126,7 +128,7 @@
         @include mq('lg') {
             height: 128px;
             flex-wrap: wrap;
-            gap: 20px 60px;
+            gap: 20px clamp_vw(26,60,900,1000);
             margin-block-start: 0;
             justify-content: space-between;
         }
@@ -199,7 +201,7 @@
                     padding: rem(12);
                     // youtubeアイコン調節
                     &:nth-child(2) {
-                        margin-inline-start: rem(20);
+                        margin-inline-start: rem(16);
                         img {
                             margin-block-start: rem(5);
                         }
@@ -225,12 +227,12 @@
             svg {
                 width: get_vw(16);
                 margin-inline-start: get_vw(10);
-                vertical-align: middle;
+                vertical-align: 2px;
             }
 
             @include mq('md') {
                 width: 186px;
-                padding-block: rem(15);
+                padding-block: rem(11);
                 font-size: rem(20);
                 line-height: 1.5;
                 background-color: map-get($color, 'base');
