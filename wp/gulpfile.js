@@ -30,14 +30,16 @@ const srcPath = {
   js: srcBase + "/js/*.js",
   php: srcBase + "/**/*.php",
   html: srcBase + "/**/*.html",
+  css: srcBase + "/style.css",
 };
 
 const distPath = {
-  css: distBase + "/assets/css/",
+  scss: distBase + "/assets/css/",
   img: distBase + "/assets/img/",
   js: distBase + "/assets/js/",
   php: distBase + "/",
   html: distBase + "/",
+  css: distBase + "/",
 };
 
 /**
@@ -75,7 +77,7 @@ const cssSass = (done) => {
     .pipe(autoprefixer(TARGET_BROWSERS))
     .pipe(postcss([mqpacker()])) // メディアクエリをまとめる
     .pipe(
-      gulp.dest(distPath.css, {
+      gulp.dest(distPath.scss, {
         sourcemaps: "./",
       })
     ) //コンパイル先
@@ -140,6 +142,14 @@ const html = (done) => {
 };
 
 /**
+ * css
+ */
+const css = (done) => {
+  gulp.src(srcPath.css).pipe(gulp.dest(distPath.css));
+  done();
+};
+
+/**
  * リロード
  */
 const browserSyncReload = (done) => {
@@ -165,6 +175,7 @@ const watchFiles = () => {
   gulp.watch(srcPath.js, gulp.series(js, browserSyncReload));
   gulp.watch(srcPath.img, gulp.series(image, browserSyncReload));
   gulp.watch(srcPath.html, gulp.series(html, browserSyncReload));
+  gulp.watch(srcPath.css, gulp.series(css, browserSyncReload));
 };
 
 /**
@@ -175,6 +186,6 @@ const watchFiles = () => {
  */
 exports.default = gulp.series(
   clean,
-  gulp.parallel(php, cssSass, js, image, html),
+  gulp.parallel(php, cssSass, js, image, html, css),
   gulp.parallel(watchFiles, browserInit)
 );
