@@ -1,6 +1,8 @@
 @use "../global" as *;
 
 .p-about {
+  max-width: 1440px;
+  margin-inline: auto;
 }
 
 .p-about__head {
@@ -14,6 +16,22 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: calc(280px / 375px * 100vw);
+
+  @include mq("md") {
+    background-image: url(../img/about/about-head-bg-01-PC.svg);
+    flex-direction: row;
+    gap: 20px;
+    padding-top: 66px;
+    padding-bottom: 66px;
+    padding-left: calc(121px / 1440px * 100vw);
+    width: calc(872px / 1440px * 100vw);
+    max-width: 872px;
+    align-items: center;
+  }
+
+  @include mq("xxl") {
+    padding-left: 121px;
+  }
 }
 
 .p-about__head-en {
@@ -22,11 +40,21 @@
   font-weight: $font-weight-600;
   letter-spacing: calc(1.2px / 375px * 100vw);
 
+  @include mq("md") {
+    font-size: rem(60);
+    font-weight: $font-weight-700;
+    letter-spacing: normal;
+  }
 }
 
 .p-about__head-ja {
   font-size: get_vw(20);
   font-weight: $font-weight-500;
+
+  @include mq("md") {
+    font-size: rem(24);
+    font-weight: $font-weight-700;
+  }
 }
 
 .p-about__breadcrumbs {
@@ -37,21 +65,53 @@
   line-height: 1.6;
   display: flex;
   gap: 5px;
+
+  @include mq("md") {
+    padding-left: calc(50px / 1440px * 100vw);
+    font-size: rem(16);
+  }
+
+  @include mq("md") {
+    padding-left: 50px;
+  }
 }
 
 .p-about__inner {
   padding-left: calc(22px / 375px * 100vw);
   padding-right: calc(21px / 375px * 100vw);
+
+  @include mq("xl") {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .p-about__content {
   margin-top: 20px;
+
+  @include mq("md") {
+    margin-top: 80px;
+  }
 }
 
 .p-about__blocks {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @include mq("md") {
+    gap: 80px;
+  }
+
+  @include mq("xl") {
+    padding-left: calc(220px / 1440px * 100vw);
+    padding-right: calc(220px / 1440px * 100vw);
+  }
+
+  @include mq("xxl") {
+    padding-left: 220px;
+    padding-right: 220px;
+  }
 }
 
 .p-about__block {

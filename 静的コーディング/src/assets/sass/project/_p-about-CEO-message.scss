@@ -4,6 +4,15 @@
   margin-top: 15px;
   position: relative;
 
+  @include mq("md") {
+    margin-top: 59px;
+  }
+
+  @include mq("xl") {
+    padding-left: calc(191px / 1440px * 100vw);
+    padding-right: calc(190px / 1440px * 100vw);
+  }
+
   &::before {
     content: "";
     width: 100vw;
@@ -14,11 +23,32 @@
     bottom: 0;
     left: calc(-22px / 375px * 100vw);
     z-index: -1;
+
+    @include mq("md") {
+      width: 100%;
+      left: 0;
+      max-width: 1059px;
+      height: calc(100% - 189px);
+    }
+
+    @include mq("xxl") {
+      left: 191px;
+      height: 753px;
+    }
   }
 }
 
 .p-about-CEO-message__top {
   position: relative;
+
+  @include mq("md") {
+    display: flex;
+    padding-right: calc(78px / 1440px * 100vw);
+  }
+
+  @include mq("xxl") {
+    padding-right: 78px;
+  }
 
   &::before {
     content: "";
@@ -29,6 +59,11 @@
     position: absolute;
     right: calc(54px / 375px * 100vw);
     z-index: -1;
+
+    @include mq("md") {
+      width: calc(1183px / 1440px * 100vw);
+      right: calc(50% - 463px);
+    }
   }
 }
 
@@ -36,22 +71,50 @@
   display: flex;
   flex-direction: column;
   padding-top: calc(33.5px / 375px * 100vw);
+
+  @include mq("md") {
+    padding-top: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+    margin-right: -70px;
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .p-about-CEO-message__head-en {
   font-family: $font-family-en;
   font-size: get_vw(40);
   font-weight: $font-weight-600;
+
+  @include mq("md") {
+    font-size: rem(60);
+    font-weight: $font-weight-700;
+  }
 }
 
 .p-about-CEO-message__head-ja {
   font-size: get_vw(20);
   font-weight: $font-weight-500;
+
+  @include mq("md") {
+    font-size: rem(24);
+    font-weight: $font-weight-700;
+  }
 }
 
 .p-about-CEO-message__image {
   width: calc(100% - 1px);
   padding-bottom: calc(19px / 375px * 100vw);
+
+  @include mq("md") {
+    width: calc(527px / 1440px * 100vw);
+    max-width: 527px;
+    padding-top: 55px;
+    padding-bottom: 56px;
+  }
   img {
     width: 100%;
     height: auto;
@@ -61,6 +124,18 @@
 .p-about-CEO-message__bottom {
   margin-top: 11px;
   padding-bottom: calc(62px / 375px * 100vw);
+
+  @include mq("md") {
+    margin-top: 39px;
+    padding-bottom: 56px;
+     padding-left: calc(144px / 1440px * 100vw);
+    padding-right: calc(145px / 1440px * 100vw);
+  }
+
+  @include mq("xxl") {
+    padding-left: 144px;
+    padding-right: 145px;
+  }
 }
 
 .p-about-CEO-message__text-wrap {
@@ -72,4 +147,9 @@
 .p-about-CEO-message__text {
   font-size: get_vw(15);
   line-height: calc(26px / 15px);
+
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 2;
+  }
 }
