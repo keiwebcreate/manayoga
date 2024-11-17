@@ -1,183 +1,180 @@
 const gulp = require("gulp");
+const del = require("del");
 
-const htmlBeautify = require("gulp-html-beautify");
-const sass = require("gulp-sass")(require("sass"));
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
-const cssSorter = require("css-declaration-sorter");
-const mmq = require("gulp-merge-media-queries");
-const cleanCss = require("gulp-clean-css");
-const rename = require("gulp-rename");
-const uglify = require("gulp-uglify");
-const gulpIf = require("gulp-if");
-const gulpIgnore = require("gulp-ignore");
+//scss
+const sass = require("gulp-dart-sass"); //DartSassを使用
+const plumber = require("gulp-plumber"); // エラーが発生しても強制終了させない
+const notify = require("gulp-notify"); // エラー発生時のアラート出力
+const browserSync = require("browser-sync").create(); //ブラウザリロード
+const autoprefixer = require("gulp-autoprefixer"); //ベンダープレフィックス自動付与
+const postcss = require("gulp-postcss"); //css-mqpackerを使用
+const mqpacker = require("css-mqpacker"); //メディアクエリをまとめる
+const bulkSass = require("gulp-sass-glob-use-forward");
 
-const browserSync = require("browser-sync");
+// 画像圧縮
+const change = require("gulp-changed");
+const imageMin = require("gulp-imagemin");
+const mozJpeg = require("imagemin-mozjpeg");
+const pngQuant = require("imagemin-pngquant");
 
-/*===============================
-html
-===============================*/
-//gulp-html-beautifyのオプション設定(コメント未記載のオプションは、デフォルト値のまま)
-const htmlBeautyOption = {
-	"indent_size": 2, //インデントのサイズ
-	"indent_char": " ",
-	"eol": "\n",
-	"indent_level": 0,
-	"indent_with_tabs": true, //true:インデントをタグにする
-	"preserve_newlines": true,
-	"max_preserve_newlines": 10,
-	"jslint_happy": false,
-	"space_after_anon_function": false,
-	"brace_style": "collapse",
-	"keep_array_indentation": false,
-	"keep_function_indentation": false,
-	"space_before_conditional": true,
-	"break_chained_methods": false,
-	"eval_code": false,
-	"unescape_strings": false,
-	"wrap_line_length": 0,
-	"wrap_attributes": "auto",
-	"wrap_attributes_indent_size": 4,
-	"end_with_newline": false
+// webp変換
+const webp = require("gulp-webp"); //gulp-webpでwebp変換
+
+// 入出力するフォルダを指定
+const srcBase = "./src";
+const distBase = "./public";
+
+const srcPath = {
+  scss: srcBase + "/assets/sass/**/*.scss",
+  img: srcBase + "/assets/img/**/*.{png,jpg,jpeg,svg,gif,ico,mp4,webp}",
+  js: srcBase + "/assets/js/*.js",
+  php: srcBase + "/assets/**/*.php",
+  html: srcBase + "/**/*.html",
 };
 
-//srcディレクトリのHTMLをフォーマット
-function formatHTML(){
-	return gulp.src("./src/**/*.html")	//入力ファイル
-	.pipe(htmlBeautify(htmlBeautyOption))
-	.pipe(gulp.dest("./src/"));	//出力先
-}
-exports.formatHTML = formatHTML;
+const distPath = {
+  css: distBase + "/assets/css/",
+  img: distBase + "/assets/img/",
+  js: distBase + "/assets/js/",
+  php: distBase + "/",
+  html: distBase + "/",
+};
 
+/**
+ * clean
+ */
+const clean = () => {
+  return del([distBase + "/**"], { force: true });
+};
 
-//publicにHTMLをコピー
-function copyHTML(){
-	return gulp.src("./src/**/*.html")	//入力ファイル
-	.pipe(htmlBeautify(htmlBeautyOption)) //HTMLをフォーマット
-	.pipe(gulp.dest("./public/"));	//出力先
-}
-exports.copyHTML = copyHTML;
+//ベンダープレフィックスを付与する条件
+const TARGET_BROWSERS = [
+  "last 2 versions", //各ブラウザの2世代前までのバージョンを担保
+  "ie >= 11", //IE11を担保
+];
 
-/*===============================
-SASSコピー
-===============================*/
-function copySass(){
-	return gulp.src("./src/assets/sass/**/*.scss")	//入力ファイル
-	.pipe(gulp.dest("./public/assets/sass"));	//sassコピー
-}
-exports.copySass = copySass;
+/**
+ * sass
+ *
+ */
+const cssSass = (done) => {
+  gulp
+    .src(srcPath.scss, { sourcemaps: true })
+    .pipe(
+      //エラーが出ても処理を止めない
+      plumber({
+        errorHandler: notify.onError("Error:<%= error.message %>"),
+      })
+    )
+    .pipe(bulkSass())
+    .pipe(
+      sass({
+        outputStyle: "expanded",
+      })
+    ) //指定できるキー expanded compressed
+    .pipe(autoprefixer(TARGET_BROWSERS))
+    .pipe(postcss([mqpacker()])) // メディアクエリをまとめる
+    .pipe(
+      gulp.dest(distPath.css, {
+        sourcemaps: "./",
+      })
+    ) //コンパイル先
+    .pipe(browserSync.stream()) // ファイルの変更を反映させる
+    .pipe(
+      notify({
+        message: "Sassをコンパイルしました！",
+        onLast: true,
+      })
+    );
+  done();
+};
 
-/*===============================
-CSS生成
-===============================*/
-function compileSass(){
-	return gulp.src("./src/assets/sass/**/*.scss")	//入力ファイル
-	.pipe(sass())	//dart-sassでコンパイル
-	.pipe(postcss([	//Sass差し替え
-		autoprefixer(),	//ベンダープレフィックス付与
-		cssSorter({order:"concentric-css"}), //cssソート
-	]))
-	.pipe(mmq())	//media queryをまとめる
-	.pipe(gulp.dest("./public/assets/css"))	//圧縮前CSS出力
-	.pipe(cleanCss())
-	.pipe(rename({
-		suffix: ".min"
-	}))
-	.pipe(gulp.dest("./public/assets/css"));	//min.css出力
-}
-exports.compileSass = compileSass;
+/**
+ * js
+ */
+const js = (done) => {
+  gulp.src(srcPath.js).pipe(gulp.dest(distPath.js));
+  done();
+};
 
-/*===============================
-サードパーティCSSコピー
-===============================*/
-function copyCSS(){
-	return gulp.src("./src/assets/css/**/*")
-	.pipe(gulp.dest("./public/assets/css"));
-}
+/**
+ * image
+ */
+const image = (done) => {
+  gulp
+    .src(srcPath.img)
+    .pipe(change(distPath.img))
+    .pipe(
+      imageMin([
+        pngQuant({
+          quality: [0.75, 0.8],
+          speed: 1,
+        }),
+        mozJpeg({
+          quality: 80,
+        }),
+        imageMin.svgo(),
+        imageMin.optipng(),
+        imageMin.gifsicle({ optimizationLevel: 3 }),
+      ])
+    )
+    .pipe(webp())
+    .pipe(gulp.dest(distPath.img));
+  done();
+};
 
+/**
+ * php
+ */
+const php = (done) => {
+  gulp.src(srcPath.php).pipe(gulp.dest(distPath.php));
+  done();
+};
 
-/*===============================
-jsコピー & min.js生成
-===============================*/
-//jsをコピー（.minも生成）
-function copyJS(){
-	return gulp.src("./src/assets/js/**/*.js")
-	.pipe(gulp.dest("./public/assets/js"))//圧縮前JS出力
-	.pipe(gulpIgnore.exclude("**/*.min.js")) //.min.jsは以降の処理を行わない
-	.pipe(uglify())	//JS圧縮
-	.pipe(rename({	//.min.jsにリネーム
-		suffix: ".min"
-	}))
-	.pipe(gulp.dest("./public/assets/js"));//min.js出力
-}
-exports.copyJS = copyJS;
+/**
+ * html
+ */
+const html = (done) => {
+  gulp.src(srcPath.html).pipe(gulp.dest(distPath.html));
+  done();
+};
 
-/*===============================
-画像コピー
-===============================*/
-function copyImg(){
-	return gulp.src("./src/assets/img/**/*")
-	.pipe(gulp.dest("./public/assets/img"));
-}
+/**
+ * リロード
+ */
+const browserSyncReload = (done) => {
+  browserSync.reload();
+  done();
+};
 
-/*===============================
-フォントファイルコピー
-===============================*/
-function copyFonts(){
-	return gulp.src("./src/assets/fonts/**/*")
-	.pipe(gulp.dest("./public/assets/fonts"));
-}
-
-/*===============================
-ブラウザ自動リロード
-===============================*/
-//ブラウザ立ち上げ
-function browserInit(done){
-	browserSync.init({
-		server:{
-			baseDir:"./public"
-		}
-	});
-	done();
-}
-
-//立ち上げたブラウザの自動リロード
-function browserReload(done){
-	browserSync.reload();
-	done();
-}
-
-/*===============================
-タスク起動
-===============================*/
-//sassコンパイルの自動実行
-function watch(){
-	gulp.watch("./src/**/*.html", gulp.series(copyHTML, browserReload));	//htmlファイルの監視
-	gulp.watch("./src/assets/sass/**/*.scss", gulp.series(copySass, compileSass, browserReload));	//scssファイルの監視
-	gulp.watch("./src/assets/css/**/*.css", gulp.series(copyCSS,browserReload)); //cssファイルの監視
-	gulp.watch("./src/assets/js/**/*.js", gulp.series(copyJS,browserReload)); //jsファイルの監視
-	gulp.watch("./src/assets/img/**/*", gulp.series(copyImg, browserReload)); //imgファイルの監視
-	gulp.watch("./src/assets/fonts/**/*", gulp.series(copyFonts, browserReload)); //フォントファイルの監視
-}
-
-/*===============================
-ビルド
-===============================*/
-function build(done){
-	copyHTML();
-	copySass();
-	compileSass();
-	copyCSS();
-	copyJS();
-	copyImg();
-	copyFonts();
-	done();
+function browserInit() {
+  browserSync.init({
+    proxy: "http://manayoga.local/",
+  });
 }
 
-/*===============================
-タスク起動
-===============================*/
+/**
+ *
+ * ファイル監視 ファイルの変更を検知したら、browserSyncReloadでreloadメソッドを呼び出す
+ * series 順番に実行
+ * watch('監視するファイル',処理)
+ */
+const watchFiles = () => {
+  gulp.watch(srcPath.php, gulp.series(php, browserSyncReload));
+  gulp.watch(srcPath.scss, gulp.series(cssSass));
+  gulp.watch(srcPath.js, gulp.series(js, browserSyncReload));
+  gulp.watch(srcPath.img, gulp.series(image, browserSyncReload));
+  gulp.watch(srcPath.html, gulp.series(html, browserSyncReload));
+};
 
-exports.dev = gulp.parallel(build, browserInit, watch);
-
-exports.build = gulp.parallel(copyHTML, copySass, compileSass, copyCSS, copyJS, copyImg, copyFonts)
+/**
+ * seriesは「順番」に実行
+ * parallelは並列で実行
+ *
+ * 一度cleanでdistフォルダ内を削除し、最新のものをdistする
+ */
+exports.default = gulp.series(
+  clean,
+  gulp.parallel(php, cssSass, js, image, html),
+  gulp.parallel(watchFiles, browserInit)
+);
