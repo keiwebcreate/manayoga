@@ -44,6 +44,7 @@
   @include mq("md") {
     display: flex;
     gap: calc(80px / 1440px * 100vw);
+    margin-top: 80px;
   }
 
   @include mq("xxl") {
@@ -58,7 +59,7 @@
   @include mq("md") {
     padding-inline: 0;
     flex-shrink: 0;
-    
+    margin-top: 0;
   }
 }
 
@@ -263,9 +264,17 @@ h3 {
 
 .p-single__column-body > figure {
   margin-top: 40px;
+
+  @include mq("md") {
+    max-width: 364px;
+  }
 }
 
 .p-single__pagination {
   margin-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 37px;
+
+  @include mq("md") {
+    padding-bottom: 40px;
+  }
 }
