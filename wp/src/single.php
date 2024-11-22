@@ -18,7 +18,6 @@
               <div class="p-single__index-wrap p-single__index-wrap--pc">
                 <?php echo do_shortcode('[ez-toc]'); ?>
                 </div>
-              </div>
               <!-- /p-single__index-wrap -->
               <!-- p-single__column-wrap -->
               <div class="p-single__column-wrap">
@@ -38,19 +37,17 @@
                 </div>
                 <div class="p-single__pagination p-single-pagination">
                     <div class="p-single-pagination__prev">
-                      <?php if (get_previous_post()) : ?>
-                        <?php previous_post_link('%link', '<span>Prev<span>'); ?>
-                      <?php endif; ?>
+                      
+                        <?php previous_post_link('%link', '<span>Prev</span>', true); ?>
+                      
                     </div>
-
               <div class="p-single-pagination__archive">
                 <a href="<?php echo esc_url(home_url('/')); ?>/blog">一覧へ戻る</a>
               </div>
-
               <div class="p-single-pagination__next">
-                <?php if (get_next_post()) : ?>
-                  <?php next_post_link('%link', '<span>Next<span>'); ?>
-                <?php endif; ?>
+               
+                  <?php next_post_link('%link', '<span>Next</span>', true); ?>
+                
               </div>
                 </div>
               </div>
