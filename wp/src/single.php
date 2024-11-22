@@ -12,6 +12,9 @@
             <?php endif; ?>
           </div>
           <!-- /p-single__breadcrumbs -->
+          <?php if (have_posts()) : ?> <!--記事があれば表示する-->
+          <?php while (have_posts()) : ?> <!--記事数文ループする-->
+          <?php the_post(); ?>
           <div class="p-single__inner">
             <div class="p-single__content">
               <!-- p-single__index-wrap -->
@@ -54,6 +57,8 @@
               <!-- /p-single__column-wrap -->
             </div>
           </div>
+          <?php endwhile; ?>
+          <?php endif; ?>
         </div>
       </section>
       <!-- /l-single -->

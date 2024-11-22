@@ -14,9 +14,11 @@
   @include mq("md") {
     padding-left: calc(50px / 1440px * 100vw);
     font-size: rem(16);
+    max-width: 1440px;
+    margin-inline: auto;
   }
 
-  @include mq("md") {
+  @include mq("xxl") {
     padding-left: 50px;
   }
 }
@@ -30,12 +32,16 @@
   padding-right: calc(22px / 375px * 100vw);
   max-width: 1440px;
   margin-inline: auto;
+
+  @include mq("xxl") {
+    padding-inline: 180px;
+  }
 }
 
 .p-single__content {
   margin-top: 12px;
 
-  @include mq("lg") {
+  @include mq("md") {
     display: flex;
     gap: calc(80px / 1440px * 100vw);
   }
@@ -48,6 +54,12 @@
 .p-single__index-wrap {
   margin-top: 40px;
   padding-inline: calc(21px / 375px * 100vw);
+
+  @include mq("md") {
+    padding-inline: 0;
+    flex-shrink: 0;
+    
+  }
 }
 
 .p-single__index-wrap > div {
@@ -56,10 +68,21 @@
   padding-bottom: calc(32px / 375px * 100vw) !important;
   padding-right: calc(32px / 375px * 100vw) !important;
   border-radius: 12px !important;
+
+  @include mq("md") {
+    padding-top: 28px !important;
+    padding-left: 30px !important;
+    padding-right: 32px !important;
+    padding-bottom: 32px !important;
+  }
 }
 
 .p-single__index-wrap > div > div > p {
   font-size: get_vw(16) !important;
+
+  @include mq("md") {
+    font-size: rem(16) !important;
+  }
 }
 
 .p-single__index-wrap > div > nav {
@@ -69,8 +92,12 @@
 .p-single__index-wrap > div > nav > ul > li > a {
   color: map-get($map: $color, $key: text) !important;
   transition: opacity 0.3s;
-  font-size: get_vw(16);
+  font-size: get_vw(16) !important;
   font-weight: $font-weight-700 !important;
+
+  @include mq("md") {
+    font-size: rem(16) !important;
+  }
 
   &:hover {
     opacity: 0.8 !important;
@@ -95,10 +122,19 @@
   font-size: get_vw(14) !important;
   line-height: calc(24 / 14);
 
+  @include mq("md") {
+    font-size: rem(14) !important;
+  }
+
 }
 
 .p-single__index-wrap--pc {
   display: none;
+
+  @include mq("lg") {
+    display: block;
+    width: 288px;
+  }
 }
 
 .p-single__index-wrap--sp {
@@ -118,6 +154,10 @@
   font-size: get_vw(14);
   font-weight: $font-weight-700;
   line-height: normal;
+
+  @include mq("md") {
+    font-size: rem(14);
+  }
 }
 
 .p-single__column-title {
@@ -125,12 +165,21 @@
   font-size: get_vw(24);
   font-weight: $font-weight-500;
   line-height: $line-height-middle;
+
+  @include mq("md") {
+    font-size: rem(32);
+    line-height: $line-height-base;
+  }
 }
 
 .p-single__column-thumbnail {
   margin-top: 8px;
   margin-bottom: 21px;
   width: 100%;
+
+  @include mq("md") {
+    margin-bottom: 56px;
+  }
 
   img {
     width: 100%;
@@ -150,6 +199,14 @@
   border-bottom: 4px solid map-get($map: $color, $key: main);
   font-size: get_vw(20);
   font-weight: $font-weight-500;
+
+  @include mq("md") {
+    padding-top: 14px;
+    padding-bottom: 12px;
+    padding-left: 23px;
+    padding-right: 24px;
+    font-size: rem(24);
+  }
 }
 
 .p-single__column-body > h3 {
@@ -159,6 +216,11 @@
   font-weight: $font-weight-500;
   margin-top: 40px;
 
+  @include mq("md") {
+    font-size: rem(20);
+    padding-left: 16px;
+  }
+
   &::before {
     content: "";
     width: 4px;
@@ -167,6 +229,10 @@
     position: absolute;
     left: 0;
     top: 0;
+
+    @include mq("md") {
+      height: 24px;
+    }
   }
 
   
@@ -185,6 +251,10 @@ h3 {
   font-size: get_vw(15);
   line-height: 1.6;
   margin-left: -1px;
+
+  @include mq("md") {
+    font-size: rem(15);
+  }
 
   &:last-child {
     margin-top: 32px;

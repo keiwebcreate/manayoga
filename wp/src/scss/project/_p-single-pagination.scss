@@ -2,30 +2,50 @@
 
 .p-single-pagination {
   display: flex;
-  gap: 40px;
+  gap: calc(40px / 375px * 100vw);
   justify-content: center;
+
+  @include mq("md") {
+    gap: 80px;
+    justify-content: flex-start;
+  }
 }
 
 .p-single-pagination__prev {
-  width: 55px;
+  width: calc(55px / 375px * 100vw);
+
+  @include mq("md") {
+    width: 55px;
+  }
 }
 
 .p-single-pagination__prev > a > span {
   font-size: get_vw(15);
   font-weight: $font-weight-700;
   line-height: normal;
-  padding-left: 21px;
+  padding-left: calc(21px / 375px * 100vw);
   position: relative;
+
+  @include mq("md") {
+    padding-left: 21px;
+    font-size: rem(15);
+  }
 
   &::before {
     content: "";
-    width: 5px;
-    height: 10px;
-    background: url(../img/single/single-icon-prev.svg) no-repeat center center / contain;
+    width: calc(5px / 375px * 100vw);
+    height: calc(10px / 375px * 100vw);
+    background: url(../img/single/single-icon-prev.svg) no-repeat center center /
+      contain;
     position: absolute;
     left: 0;
     top: 50%;
     translate: 0 -50%;
+
+    @include mq("md") {
+      width: 5px;
+      height: 10px;
+    }
   }
 }
 
@@ -33,27 +53,46 @@
   font-size: get_vw(15);
   font-weight: $font-weight-500;
   line-height: normal;
+
+  @include mq("md") {
+    font-size: rem(15);
+  }
 }
 
 .p-single-pagination__next {
-  width: 55px;
+  width: calc(55px / 375px * 100vw);
+
+  @include mq("md") {
+    width: 55px;
+  }
 }
 
 .p-single-pagination__next > a > span {
   font-size: get_vw(15);
   font-weight: $font-weight-700;
   line-height: normal;
-  padding-right: 21px;
+  padding-right: calc(21px / 375px * 100vw);
   position: relative;
 
-    &::before {
+  @include mq("md") {
+    padding-right: 21px;
+    font-size: rem(15);
+  }
+
+  &::before {
     content: "";
-    width: 5px;
-    height: 10px;
-    background: url(../img/single/blog-icon-next.svg) no-repeat center center / contain;
+    width: calc(5px / 375px * 100vw);
+    height: calc(10px / 375px * 100vw);
+    background: url(../img/single/blog-icon-next.svg) no-repeat center center /
+      contain;
     position: absolute;
     right: 0;
     top: 50%;
     translate: 0 -50%;
+
+    @include mq("md") {
+      width: 5px;
+      height: 10px;
+    }
   }
 }
