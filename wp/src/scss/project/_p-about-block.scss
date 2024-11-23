@@ -24,6 +24,7 @@
 
   @include mq("md") {
     flex-direction: row-reverse;
+    justify-content: flex-end;
   }
 }
 
@@ -94,6 +95,7 @@
   margin-top: -2px;
   @include mq("md") {
     padding-left: calc(405px / 1440px * 100vw);
+    margin-top: 4px;
   }
 
   @include mq("xxl") {
