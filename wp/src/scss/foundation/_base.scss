@@ -1,6 +1,7 @@
 @use "../global/" as *;
 
 html {
+  overflow-x: hidden;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
   line-height: $line-height-base;
   color: map-get($color, text);
   background-color: map-get($color, 'base');
+  overflow-x: hidden;
 
   @include mq(md) {
     letter-spacing: normal;

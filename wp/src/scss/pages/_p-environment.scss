@@ -24,7 +24,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: end;
-            gap: rem(48);
+            gap: min(get_vw(15), rem(48));
         }
     }
     
@@ -33,7 +33,8 @@
 
         @include mq('md') {
             display: block;
-            width: min(get_vw(497,1100),497px);
+            width: 44%;
+            max-width: 497px;
         }
         
         .fv-title {

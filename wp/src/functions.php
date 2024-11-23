@@ -45,4 +45,24 @@ function taxonomy_orderby_description( $orderby, $args ) {
 }
 add_filter( 'get_terms_orderby', 'taxonomy_orderby_description', 10, 2 );
 
+function custom_breadcrumb_navxt_title($title, $type, $id) {
+  // 現在の投稿オブジェクトを取得
+  $post = get_post($id);
+
+  // カスタム投稿タイプ 'interview' に限定
+  if ($post && $post->post_type === 'interview') {
+      // カスタムフィールド 'name' の値を取得
+      $custom_name = get_post_meta($post->ID, 'name', true);
+
+      // カスタムフィールド 'name' が設定されていれば、それをタイトルに置き換え
+      if (!empty($custom_name)) {
+          $title = $custom_name;
+      }
+  }
+  return $title;
+}
+add_filter('bcn_breadcrumb_title', 'custom_breadcrumb_navxt_title', 10, 3);
+
+
+
 ?>

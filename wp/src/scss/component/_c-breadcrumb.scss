@@ -7,11 +7,25 @@
     display: flex;
     gap: get_vw(3);
 
+    &.margin {
+        margin-block-start: 55px;
+    }
+
+    span {
+        br {
+            display: none;
+        }
+    }
+
     @include mq('md') {
         max-width: 1440px;
         margin-inline: auto;
         padding: rem(12) rem(50);
         font-size: rem(15);
         gap: rem(3);
+
+        &.margin {
+            margin-block-start: 80px;
+        }
     }
 }
