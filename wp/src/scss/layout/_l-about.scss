@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .l-about {
+  margin-top: 8px;
 
   @include mq("md") {
     padding-bottom: 100px;

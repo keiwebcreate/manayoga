@@ -8,9 +8,9 @@
 .p-about__head {
   display: flex;
   flex-direction: column;
-  padding-top: 28px;
+  padding-top: 29px;
   padding-bottom: 29px;
-  padding-left: calc(27px / 375px * 100vw);
+  padding-left: 26px;
   background-image: url(../img/about/about-head-bg-01-SP.svg);
   background-position: left center;
   background-repeat: no-repeat;
@@ -58,13 +58,11 @@
 }
 
 .p-about__breadcrumbs {
-  padding-top: 12px;
+  padding-top: 14px;
   padding-bottom: 12px;
-  padding-left: calc(24px / 375px * 100vw);
+  padding-left: 24px;
   font-size: get_vw(15);
   line-height: 1.6;
-  display: flex;
-  gap: 5px;
 
   @include mq("md") {
     padding-left: calc(50px / 1440px * 100vw);

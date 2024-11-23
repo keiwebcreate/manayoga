@@ -91,6 +91,7 @@
 }
 
 .p-about-block__bottom--type2 {
+  margin-top: -2px;
   @include mq("md") {
     padding-left: calc(405px / 1440px * 100vw);
   }

@@ -108,6 +108,7 @@
 .p-about-CEO-message__image {
   width: calc(100% - 1px);
   padding-bottom: calc(19px / 375px * 100vw);
+  margin-top: 24px;
 
   @include mq("md") {
     width: calc(527px / 1440px * 100vw);

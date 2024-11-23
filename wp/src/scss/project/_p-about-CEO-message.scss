@@ -52,12 +52,12 @@
 
   &::before {
     content: "";
-    width: calc(321px / 375px * 100vw);
+    width: 321px;
     height: 100%;
     background-color: #eae9e9;
     border-radius: 0 20px 20px 0;
     position: absolute;
-    right: calc(54px / 375px * 100vw);
+    right: 34px;
     z-index: -1;
 
     @include mq("md") {
@@ -70,7 +70,9 @@
 .p-about-CEO-message__head {
   display: flex;
   flex-direction: column;
-  padding-top: calc(33.5px / 375px * 100vw);
+  gap: 1px;
+  padding-top: 35.5px;
+  padding-left: 2px;
 
   @include mq("md") {
     padding-top: 0;
@@ -88,6 +90,8 @@
   font-family: $font-family-en;
   font-size: get_vw(40);
   font-weight: $font-weight-600;
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: #332C2F;
 
   @include mq("md") {
     font-size: rem(60);
@@ -107,7 +111,8 @@
 
 .p-about-CEO-message__image {
   width: calc(100% - 1px);
-  padding-bottom: calc(19px / 375px * 100vw);
+  padding-bottom: 19px;
+  margin-top: 22px;
 
   @include mq("md") {
     width: calc(527px / 1440px * 100vw);
