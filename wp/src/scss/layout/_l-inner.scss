@@ -9,6 +9,7 @@
 
     @include mq('md') {
         margin-inline: auto;
+        max-width: 1440px;
         padding-inline: rem(50);
     }
 }

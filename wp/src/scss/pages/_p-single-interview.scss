@@ -1,0 +1,303 @@
+@use "../global/" as *;
+
+.p-single-interview {
+
+    &__fv {
+        position: relative;
+        width: calc(100% + get_vw(44));
+        margin-inline-start: get_vw(-22);
+
+        @include mq('md') {
+            width: calc(100% + 100px);
+            margin-inline-start: rem(-50);
+        }
+
+        @include mq('xxl') {
+            width: 100vw;
+            margin-inline-start: calc(-50vw + 50%);
+        }
+
+        .thumbnail {
+            img {
+                aspect-ratio: 375 / 465;
+                object-fit: cover;
+            }
+            @include mq('md') {
+                img {
+                    aspect-ratio: auto;
+                    max-height: 807px;
+                    width: 100%;
+                }
+            }
+        }
+        
+        .name {
+            position: absolute;
+            left: calc(50% - get_vw(4.5));
+            top: get_vw(69.9);
+            color: map-get($color, 'sub2');
+            font-family: $font-family-en;
+            font-size: get_vw(24);
+            font-weight: 700;
+
+            @include mq('md') {
+                font-size: min(get_vw(60,1440),60px);
+                top: min(get_vw(163,1440),163px);
+                left: calc(50% + min(get_vw(69,1440),69px));
+            }
+        }
+        
+        .head {
+            padding: get_vw(12) get_vw(20);
+            background-color: map-get($color, 'base');
+            font-size: get_vw(24);
+            font-weight: 500;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: get_vw(248.9);
+            width: get_vw(351);
+
+            @include mq('md') {
+                padding: min(get_vw(20,1440),20px) min(get_vw(40,1440),40px);
+                font-size: clamp_vw(20,32,768,1440);
+                top: min(get_vw(403,1440),403px);
+                width: fit-content;
+                transform: none;
+                left: calc(50% + 6px);
+            }
+        }        
+    }
+
+    &__content {
+        max-width: 1000px;
+        margin-inline: auto;
+
+        .wp-block-columns {
+            position: relative;
+            margin-block: get_vw(-48) get_vw(76);
+            left: get_vw(-22);
+            width: calc(100% + get_vw(22));
+            padding: get_vw(10) get_vw(10) get_vw(10) 0;
+            background: linear-gradient(to right, #FCBFD1, #E0C8E9);
+            opacity: 0.9;
+            border-radius: 0px 30px 30px 0px;
+
+            @include mq('md') {
+                width: calc(100% + 180px);
+                left: -150px;
+                margin-block: rem(-163) rem(40);
+                padding: rem(10) rem(10) rem(10) 0;
+            }
+
+            @include mq('xl') {
+                width: calc(100% + (100vw - 500px) + 88px);
+                left: calc(-100vw + 500px);
+            }
+
+            .wp-block-column {
+                background-color: map-get($color, 'base');
+                padding: get_vw(37) get_vw(8) get_vw(29) get_vw(34);
+                border-radius: 0px 30px 30px 0px;
+
+                @include mq('md') {
+                    padding: rem(59) rem(20) rem(45) rem(150);
+                }
+
+                @include mq('xl') {
+                    padding-inline: calc(100vw - 500px) rem(78);
+                }
+
+                p {
+                    font-size: get_vw(15);
+                    line-height: 1.6;
+                    margin-block-end: 0;
+
+                    &:last-child {
+                        font-weight: 700;
+                        line-height: normal;
+                        margin-top: get_vw(12);
+                    }
+
+                    @include mq('md') {
+                        font-size: rem(20);
+                        font-weight: 500;
+                        line-height: 1.8;
+
+                        br {
+                            display: none;
+                        }
+
+                        &:last-child {
+                            font-size: rem(15);
+                            margin-top: rem(20);
+                        }
+                    }
+                }
+
+                .accent {
+                    font-size: get_vw(20);
+                    font-weight: 700;
+                    line-height: 1.8;
+                    margin-block: 4px -4px;
+                    span {
+                        font-weight: 500;
+                    }
+
+                    @include mq('md') {
+                        font-size: rem(32);
+                        line-height: 1.5;
+                        font-family: $font-family-en;
+                        margin-block: 0 -4px;
+
+                        br {
+                            display: none;
+                        }
+
+                        span {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+
+        h2 {
+            font-size: get_vw(24);
+            font-weight: 500;
+            line-height: 1.8;
+            margin-block-end: get_vw(20);
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: get_vw(194);
+                height: auto;
+                aspect-ratio: 1 / 1;
+                background: url(../img/interview/bg-dec-purple.webp) no-repeat center center / contain;
+                left: get_vw(-63);
+                top: get_vw(-56);
+                z-index: -1;
+            }
+
+            @include mq('md') {
+                font-size: rem(32);
+                line-height: 1.5;
+                margin-block-end: rem(20);
+
+                &::before {
+                    width: rem(343);
+                    top: -188px;
+                    left: -195px;
+                }
+            }
+        }
+
+        h3 {
+            margin-block-end: get_vw(8);
+            font-size: get_vw(20);
+            font-weight: 500;
+
+            @include mq('md') {
+                margin-block-end: rem(4);
+                font-size: rem(20);
+            }
+        }
+
+        p {
+            margin-block-end: get_vw(20);
+            font-size: get_vw(15);
+            line-height: 1.6;
+
+            @include mq('md') {
+                margin-block-end: rem(30);
+                font-size: rem(15);
+            }
+        }
+
+        figure {
+            max-width: 600px;
+            margin-inline: auto;
+            padding-block: get_vw(12) get_vw(30);
+            position: relative;
+            z-index: -1;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: get_vw(339);
+                height: auto;
+                aspect-ratio: 1 / 1;
+                background: url(../img/interview/bg-dec-pink.webp) no-repeat center center / contain;
+                top: get_vw(-203);
+                left: get_vw(142);
+                z-index: 0;
+                overflow: hidden;
+            }
+
+            @include mq('md') {
+                padding-block: rem(15) rem(41);
+                
+                &::before {
+                    top: 120px;
+                    left: 470px;
+                    width: rem(577);
+                }
+            }
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        gap: get_vw(40);
+        justify-content: center;
+        margin-block: get_vw(60) get_vw(38);
+
+        @include mq('md') {
+            margin-block: rem(70) rem(80);
+            gap: rem(80);
+        }
+
+        a {
+            font-size: get_vw(15);
+            font-weight: 500;
+            line-height: normal;
+
+            svg {
+                width: get_vw(8);
+                vertical-align: 0;
+            }
+
+            &.prev-post {
+                svg {
+                    margin-right: get_vw(16);
+                }
+            }
+            &.next-post {
+                svg {
+                    margin-left: get_vw(16);
+                }
+            }
+
+            @include mq('md') {
+                font-size: rem(15);
+
+                svg {
+                    width: rem(8);
+                }
+
+                &.prev-post {
+                    svg {
+                        margin-right: rem(16);
+                    }
+                }
+                &.next-post {
+                    svg {
+                        margin-left: rem(16);
+                    }
+                }
+            }
+        }
+    }
+}
