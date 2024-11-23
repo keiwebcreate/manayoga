@@ -132,14 +132,18 @@
 .p-single__index-wrap--pc {
   display: none;
 
-  @include mq("lg") {
+  @include mq("md") {
     display: block;
     width: 288px;
+    position: sticky !important;
+    top: 100px !important;
+    left: 0;
+    height: fit-content;
   }
 }
 
 .p-single__index-wrap--sp {
-  @include mq("lg") {
+  @include mq("md") {
     display: none;
   }
 }
@@ -174,11 +178,12 @@
 }
 
 .p-single__column-thumbnail {
-  margin-top: 8px;
-  margin-bottom: 21px;
+  margin-top: calc(8px / 375px * 100vw);
+  margin-bottom: calc(21px / 375px * 100vw);
   width: 100%;
 
   @include mq("md") {
+    margin-top: 8px;
     margin-bottom: 56px;
   }
 
@@ -215,9 +220,10 @@
   position: relative;
   font-size: get_vw(20);
   font-weight: $font-weight-500;
-  margin-top: 40px;
+  margin-top: calc(40px / 375px * 100vw);
 
   @include mq("md") {
+    margin-top: 40px;
     font-size: rem(20);
     padding-left: 16px;
   }
@@ -243,38 +249,49 @@ h3 {
   &:nth-of-type(3),
   &:nth-of-type(4),
   &:nth-of-type(5) {
-    margin-top: 32px;
+    margin-top: calc(32px / 375px * 100vw);
+
+    @include mq("md") {
+      margin-top: 32px;
+    }
   }
 }
 
 .p-single__column-body > p {
-  margin-top: 16px;
+  margin-top: calc(16px / 375px * 100vw);
   font-size: get_vw(15);
   line-height: 1.6;
   margin-left: -1px;
 
   @include mq("md") {
+    margin-top: 16px;
     font-size: rem(15);
   }
 
   &:last-child {
-    margin-top: 32px;
+    margin-top: calc(32px / 375px * 100vw);
+
+    @include mq("md") {
+      margin-top: 32px;
+    }
   }
 }
 
 .p-single__column-body > figure {
-  margin-top: 40px;
+  margin-top: calc(40px / 375px * 100vw);
 
   @include mq("md") {
+    margin-top: 40px;
     max-width: 364px;
   }
 }
 
 .p-single__pagination {
-  margin-top: 40px;
-  padding-bottom: 37px;
+  margin-top: calc(40px / 375px * 100vw);
+  padding-bottom: calc(37px / 375px * 100vw);
 
   @include mq("md") {
+    margin-top: 40px;
     padding-bottom: 40px;
   }
 }
