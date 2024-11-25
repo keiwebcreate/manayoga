@@ -5,12 +5,14 @@
       <!-- l-blog -->
       <section class="l-blog">
         <div class="p-blog">
+          <div class="p-blog__head-wrap">
           <!-- p-blog__head -->
           <h2 class="p-blog__head">
             <span class="p-blog__head-en">Blog</span>
             <span class="p-blog__head-ja">ブログ</span>
           </h2>
           <!-- /p-blog__head -->
+          </div>
           <!-- p-blog__breadcrumbs -->
           <div class="p-blog__breadcrumbs">
             <?php if (function_exists("bcn_display")): ?>

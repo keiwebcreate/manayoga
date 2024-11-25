@@ -3,11 +3,16 @@
 .p-blog {
 }
 
+.p-blog__head-wrap {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
 .p-blog__head {
   display: flex;
   flex-direction: column;
   padding-top: calc(29px / 375px * 100vw);
-  padding-bottom:  calc(29px / 375px * 100vw);
+  padding-bottom: calc(29px / 375px * 100vw);
   padding-left: calc(26px / 375px * 100vw);
   background-image: url(../img/about/about-head-bg-01-SP.svg);
   background-position: left center;
@@ -71,6 +76,8 @@
 
   @include mq("md") {
     padding-left: 50px;
+    max-width: 1440px;
+    margin-inline: auto;
   }
 }
 
@@ -78,9 +85,16 @@
   padding-left: calc(23px / 375px * 100vw);
   padding-right: calc(22px / 375px * 100vw);
   background-color: map-get($color, sub1);
+
+  @include mq("md") {
+    padding-left: calc(112px / 1440px * 100vw);
+    padding-right: calc(112px / 1440px * 100vw);
+  }
 }
 
 .p-blog__content {
+  max-width: 1216px;
+  margin-inline: auto;
 }
 
 .p-blog__list {
@@ -88,6 +102,23 @@
   display: flex;
   flex-direction: column;
   gap: 34px;
+
+  @include mq("md") {
+    padding-top: 78px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: calc(36px / 1440px * 100vw);
+    row-gap: calc(37px / 1440px * 100vw);
+  }
+
+  @include mq("xl") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mq("xxl") {
+    column-gap: 36px;
+    row-gap: 37px;
+  }
 }
 
 .p-blog__item {
@@ -102,8 +133,11 @@
 }
 
 .p-blog__pagination {
-  margin-top: 30px;
+  margin-top: calc(30px / 375px * 100vw);
   padding-bottom: 40px;
+
+  @include mq("md") {
+    margin-top: 30px;
+    padding-bottom: 80px;
+  }
 }
-
-
