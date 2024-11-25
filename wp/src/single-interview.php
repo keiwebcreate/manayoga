@@ -31,7 +31,7 @@
             <?php endif; ?>
 
             <!-- 投稿一覧へのリンク -->
-            <a href="<?php echo get_post_type_archive_link('interview'); ?>" class="all-posts">
+            <a href="<?php echo home_url('/interview'); ?>" class="all-posts">
                 一覧へ戻る
             </a>
 
