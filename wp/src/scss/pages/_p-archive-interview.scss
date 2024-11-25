@@ -1,0 +1,200 @@
+@use "../global/" as *;
+
+.p-archive-interview {
+    padding-inline: 0;
+
+    @include mq('md') {
+        padding-inline: 0;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: get_vw(20);
+        margin-block: get_vw(39);
+
+        @include mq('md') {
+            gap: rem(30);
+            margin-block: rem(79);
+
+        }
+
+        @include mq('lg') {
+            flex-direction: column;
+            max-height: 790px;
+        }
+        
+        .interview-post {
+            position: relative;
+            width: 100%;
+            height: get_vw(166);
+
+            &:hover {
+                .interview-post__hover {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            @include mq('md') {
+                height: 380px;
+                
+            }
+
+            @include mq('lg') {
+                width: calc(50% - rem(15));
+
+                &:nth-child(n + 3) {
+                    .interview-post__img {
+                        position: absolute;
+                        right: 0;
+                        clip-path: polygon(36% 0, 100% 0, 100% 100%, 0 100%);
+                    }
+
+                    .interview-post__detail {
+                        top: auto;
+                        left: auto;
+                        bottom: rem(50);
+                        right: calc(86 / 705 * 100%);
+                    }
+
+                    .interview-post__hover {
+                        right: auto;
+                        left: -100%;
+                    }
+                }
+            }
+            
+            .interview-post__img {
+                clip-path: polygon(0 0, 100% 0, 64% 100%, 0 100%);
+                height: 100%;
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 100% 15%;
+                }
+
+                @include mq('lg') {
+                    width: calc(856 / 705 * 100%);
+                    img {
+                    }
+                }
+            }
+            
+            .interview-post__detail {
+                position: absolute;
+                bottom: get_vw(20);
+                right: get_vw(24);
+                background: var(--sub2, linear-gradient(90deg, #FCBFD1 0%, #E0C8E9 100%));
+                padding: get_vw(8) get_vw(20);
+
+                @include mq('md') {
+                    padding: rem(12) rem(30);
+                    width: 196px;
+                }
+
+                @include mq('lg') {
+                    bottom: auto;
+                    top: rem(60);
+                    right: auto;
+                    left: calc(466 / 705 * 100%);
+                }
+            
+                .job {
+                    font-size: get_vw(13);
+                    line-height: normal;
+
+                    @include mq('md') {
+                        font-size: rem(15);
+                        line-height: 1.6;
+                    }
+                }
+                
+                .name {
+                    font-size: get_vw(15);
+                    font-weight: 500;
+                    line-height: normal;
+
+                    @include mq('md') {
+                        font-size: rem(32);
+                        line-height: 1.5;
+                    }
+                }
+            }
+            
+            .interview-post__hover {
+                position: absolute;
+                top: get_vw(140);
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - get_vw(48));
+                z-index: 10;
+                padding: get_vw(30) get_vw(20);
+                visibility: hidden;
+                opacity: 0;
+                transition: 0.1s visibility, 0.3s all;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: #FEEBF1;
+                    filter: blur(10px);
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                }
+                
+                @include mq('md') {
+                    width: calc(660 / 705 * 100%);
+                    padding: calc(61 / 705 * 100%) calc(58 / 705 * 100%);
+                    top: rem(350);
+                }
+
+                @include mq('lg') {
+                    top: rem(29);
+                    right: -100%;
+                    left: auto;
+                    transform: none;
+                }
+                
+                .detail {
+                    font-size: get_vw(13);
+                    margin-block-end: get_vw(12);
+
+                    @include mq('md') {
+                        font-size: rem(24);
+                        margin-block-end: rem(12);
+                        line-height: 1.8;
+                    }
+                }
+                
+                .message {
+                    font-size: get_vw(15);
+                    margin-block-end: get_vw(12);
+
+                    @include mq('md') {
+                        font-size: rem(32);
+                        margin-block-end: rem(13);
+                    }
+                }
+                
+                .read {
+                    font-size: get_vw(12);
+                    width: 136px;
+                    height: 55px;
+                    margin-inline-start: auto;
+
+                    @include mq('md') {
+                        height: 28px;
+                        font-size: rem(15);
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                }
+            }
+        }
+    }
+}
