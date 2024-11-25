@@ -1,0 +1,14 @@
+@use "../global/" as *;
+
+.l-main {
+    
+}
+
+.l-inner {
+    padding-inline: get_vw(22);
+
+    @include mq('md') {
+        margin-inline: auto;
+        padding-inline: rem(50);
+    }
+}

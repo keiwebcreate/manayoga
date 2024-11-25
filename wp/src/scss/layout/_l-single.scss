@@ -1,0 +1,11 @@
+@use "../global" as *;
+
+.l-single {
+  margin-top: 9px;
+ 
+
+  @include mq("md") {
+    padding-bottom: 40px;
+     margin-top: 47px;
+  }
+}
