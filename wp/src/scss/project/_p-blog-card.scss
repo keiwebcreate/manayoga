@@ -15,7 +15,7 @@
 
 .p-blog-card__date {
   display: block;
-  margin-top: 4px;
+  margin-top: 2px;
   font-family: $font-family-en;
   font-size: get_vw(15);
   font-weight: $font-weight-500;
@@ -32,7 +32,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-
+  margin-top: 3px;
 }
 
 .p-blog-card__tag-item {

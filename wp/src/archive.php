@@ -13,21 +13,21 @@
           <!-- /p-blog__head -->
           <!-- p-blog__breadcrumbs -->
           <div class="p-blog__breadcrumbs">
-            <span
-              ><a href="#" class="home"><span>HOME</span></a>
-            </span>
-            &gt;
-            <span
-              ><a href="#"><span>Blog</span></a>
-            </span>
+            <?php if (function_exists("bcn_display")): ?>
+            <?php bcn_display(); ?>
+            <?php endif; ?>
           </div>
           <!-- /p-blog__breadcrumbs -->
           <div class="p-blog__inner">
             <div class="p-blog__content">
               <!-- p-blog__list -->
               <ul class="p-blog__list">
+                <?php if ( have_posts() ) : ?>
+                  <?php while ( have_posts() ) : ?>
+                    <?php the_post(); ?>
+
                 <li class="p-blog__item">
-                  <a href="#" class="p-blog__link">
+                  <a href="<?php the_permalink(); ?>" class="p-blog__link">
                     <article class="p-blog__card p-blog-card">
                       <div class="p-blog-card__thumbnail">
                         <img src="./assets/img/blog/blog-photo-01.webp" alt="ブログのサムネイル" width="760" height="400">
@@ -111,6 +111,8 @@
                     </article>
                   </a>
                 </li>
+                <?php endwhile; ?>
+                <?php endif; ?>
               </ul>
               <!-- /p-blog__list -->
               <div class="c-pagination">

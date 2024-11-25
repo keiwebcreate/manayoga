@@ -71,7 +71,7 @@ function is_mobile()
 function mobile_posts_per_page($query)
 {
   if (! is_admin() && is_mobile() && $query->is_main_query()) {
-    $query->set('posts_per_page', 3); //10件表示
+    $query->set('posts_per_page', 5); //5件表示
   }
 }
 add_action('pre_get_posts', 'mobile_posts_per_page');

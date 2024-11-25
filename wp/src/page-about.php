@@ -15,13 +15,9 @@
           <!-- /p-about__head -->
           <!-- p-about__breadcrumbs -->
           <div class="p-about__breadcrumbs">
-            <span
-              ><a href="#" class="home"><span>HOME</span></a>
-            </span>
-            &gt;
-            <span
-              ><a href="#"><span>About</span></a>
-            </span>
+            <?php if (function_exists("bcn_display")): ?>
+            <?php bcn_display(); ?>
+            <?php endif; ?>
           </div>
           <!-- /p-about__breadcrumbs -->
           <div class="p-about__inner">

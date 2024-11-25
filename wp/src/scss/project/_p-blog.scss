@@ -6,9 +6,9 @@
 .p-blog__head {
   display: flex;
   flex-direction: column;
-  padding-top: 28px;
-  padding-bottom: 29px;
-  padding-left: calc(27px / 375px * 100vw);
+  padding-top: calc(29px / 375px * 100vw);
+  padding-bottom:  calc(29px / 375px * 100vw);
+  padding-left: calc(26px / 375px * 100vw);
   background-image: url(../img/about/about-head-bg-01-SP.svg);
   background-position: left center;
   background-repeat: no-repeat;
@@ -56,16 +56,16 @@
 }
 
 .p-blog__breadcrumbs {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: calc(14px / 375px * 100vw);
+  padding-bottom: calc(12px / 375px * 100vw);
   padding-left: calc(24px / 375px * 100vw);
   font-size: get_vw(15);
   line-height: 1.6;
-  display: flex;
-  gap: 5px;
 
   @include mq("md") {
     padding-left: calc(50px / 1440px * 100vw);
+    padding-top: 12px;
+    padding-bottom: 12px;
     font-size: rem(16);
   }
 
@@ -101,6 +101,9 @@
 .p-blog__card {
 }
 
-.c-pagination {
+.p-blog__pagination {
+  margin-top: 30px;
   padding-bottom: 40px;
 }
+
+
