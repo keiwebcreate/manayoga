@@ -65,7 +65,7 @@
                     <h3 class="p-about-block__message">
                       好きなことを仕事に、<br />仲間と成長できる環境を
                     </h3>
-                    <p class="p-about-block__text">
+                    <p class="p-about-block__text p-about-block__text--type2">
                       社員を大切にし、働きやすい環境と自己成長の機会を提供します。<br />初心者から経験者まで安心して楽しめるレッスンプログラムを通じて、健康的な習慣と心にゆとりを持てる毎日を作り出します。また、地域イベントやワークショップを積極的に開催し、地域社会全体の健康促進に貢献する会社を目指しています。
                     </p>
                   </div>
@@ -75,6 +75,7 @@
               <!-- p-about__CEO-message -->
               <div class="p-about__CEO-message p-about-CEO-message">
                 <div class="p-about-CEO-message__top">
+                  <div class="p-about-CEO-message__top-content-wrap">
                   <h3 class="p-about-CEO-message__head">
                     <span class="p-about-CEO-message__head-en">Message</span>
                     <span class="p-about-CEO-message__head-ja"
@@ -86,6 +87,7 @@
                       src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/about/about-photo-03.webp"
                       alt="代表取締役の男性の画像" width="1054" height="704"
                     />
+                  </div>
                   </div>
                 </div>
                 <div class="p-about-CEO-message__bottom">
