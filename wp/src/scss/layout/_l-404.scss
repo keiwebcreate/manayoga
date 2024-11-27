@@ -2,7 +2,7 @@
 
 .l-404 {
   margin-top: 8px;
-  padding-bottom: 40px;
+  padding-bottom: calc(40px / 375px * 100vw);
 
   @include mq("md") {
     padding-bottom: 80px;

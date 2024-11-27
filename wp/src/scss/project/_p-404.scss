@@ -6,8 +6,8 @@
 }
 
 .p-404__head {
-  padding-top: 43px;
-  padding-bottom: 44px;
+  padding-top: calc(43px / 375px * 100vw);
+  padding-bottom: calc(44px / 375px * 100vw);
   padding-left: calc(26px / 375px * 100vw);
   background-image: url(../img/about/about-head-bg-01-SP.svg);
   background-position: left center;
@@ -69,10 +69,15 @@
 .p-404__inner {
   padding-left: calc(23px / 375px * 100vw);
   padding-right: calc(22px / 375px * 100vw);
+
+  @include mq("md") {
+    padding-left: 23px;
+    padding-right: 22px;
+  }
 }
 
 .p-404__content {
-  margin-top: 40px;
+  margin-top: calc(40px / 375px * 100vw);
 
   @include mq("md") {
     max-width: 677px;
@@ -95,7 +100,7 @@
 }
 
 .p-404__text {
-  margin-top: 30px;
+  margin-top: calc(30px / 375px * 100vw);
   font-size: get_vw(15);
   line-height: 1.6;
   text-align: center;
@@ -108,7 +113,7 @@
 }
 
 .p-404__button {
-  margin-top: 30px;
+  margin-top: calc(30px / 375px * 100vw);
 
   @include mq("md") {
     margin-top: 40px;
@@ -119,16 +124,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  padding-left: 32px;
-  padding-right: 40px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 196px;
+  gap: calc(12px / 375px * 100vw);
+  padding-left: calc(32px / 375px * 100vw);
+  padding-right: calc(40px / 375px * 100vw);
+  padding-top: calc(15px / 375px * 100vw);
+  padding-bottom: calc(15px / 375px * 100vw);
+  width: calc(196px / 375px * 100vw);
   margin-inline: auto;
   border: 2px solid #753bba;
   border-radius: 8px;
-  height: 56px;
+  height: calc(56px / 375px * 100vw);
   box-sizing: border-box;
 
   @include mq("md") {
@@ -154,6 +159,11 @@
 }
 
 .p-404__button-link > svg {
-  width: 16px;
-  height: 12px;
+  width: calc(16px / 375px * 100vw);
+  height: calc(12px / 375px * 100vw);
+
+  @include mq("md") {
+    width: 16px;
+    height: 12px;
+  }
 }
