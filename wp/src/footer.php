@@ -1,4 +1,5 @@
 <footer class="l-footer">
+	<?php if( !is_404() ): ?>
 	<div class="l-footer__cta">
 		<p>
 			さあ、共に踏みだそう。
@@ -12,6 +13,7 @@
 			</span>
 		</a>
 	</div>
+	<?php endif; ?>
 	<div class="l-footer__inner">
 		<div class="l-footer__wrap">
 			<div class="l-footer__sp-wrap">

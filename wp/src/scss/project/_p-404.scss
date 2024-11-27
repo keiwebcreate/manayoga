@@ -54,7 +54,7 @@
 
   @include mq("md") {
     padding-left: calc(50px / 1440px * 100vw);
-    padding-top: 12px;
+    padding-top: 9px;
     padding-bottom: 12px;
     font-size: rem(16);
   }
@@ -99,10 +99,20 @@
   font-size: get_vw(15);
   line-height: 1.6;
   text-align: center;
+
+  @include mq("md") {
+    margin-top: 40px;
+    font-size: rem(20);
+    line-height: $line-height-base;
+  }
 }
 
 .p-404__button {
   margin-top: 30px;
+
+  @include mq("md") {
+    margin-top: 40px;
+  }
 }
 
 .p-404__button-link {
@@ -120,6 +130,16 @@
   border-radius: 8px;
   height: 56px;
   box-sizing: border-box;
+
+  @include mq("md") {
+    width: 196px;
+    height: 56px;
+    gap: 12px;
+    padding-left: 32px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
 
 .p-404__button-link > span {
@@ -127,6 +147,10 @@
   font-weight: $font-weight-500;
   color: #753bba;
   white-space: nowrap;
+
+  @include mq("md") {
+    font-size: rem(20);
+  }
 }
 
 .p-404__button-link > svg {
