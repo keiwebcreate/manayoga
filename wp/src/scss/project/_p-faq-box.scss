@@ -8,24 +8,29 @@
 .p-faq-box__head {
   background-color: map-get($map: $color, $key: base);
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 21px;
   width: 100%;
   padding-right: 52px;
-  padding-top: 22px;
-  padding-bottom: 15px;
-  padding-left: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 32px;
   border-radius: 20px;
   position: relative;
+  border: 1px solid map-get($map: $color, $key: main);
+  height: 81px;
+  box-sizing: border-box;
+
 
   &::after {
     content: "";
-    width: 7px;
-    height: 13.276px;
+    width: 16px;
+    height: 25.276px;
     background: url(../img/faq/faq-icon-toggle.svg) no-repeat center center /
       contain;
     position: absolute;
-    top: 50%;
-    right: 23px;
+    top: calc(50% - 2px);
+    right: 21px;
     translate: 0 -50%;
   }
 }
@@ -41,10 +46,11 @@
   font-size: 15px;
   font-weight: $font-weight-700;
   line-height: normal;
+  margin-top: 9px;
 }
 
 .p-faq-box__body {
-  padding-top: 20px;
+  padding-top: 19px;
   padding-left: 32px;
   padding-right: 16px;
   padding-bottom: 20px;
