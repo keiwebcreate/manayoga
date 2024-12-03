@@ -6,12 +6,14 @@
   <section class="l-faq">
 
     <div class="p-faq">
+      <div class="p-faq__head-wrap">
       <!-- p-faq__head -->
       <h2 class="p-faq__head">
         <span class="p-faq__head-en">FAQ</span>
         <span class="p-faq__head-ja">よくある質問</span>
       </h2>
       <!-- /p-faq__head -->
+      </div>
       <!-- p-faq__breadcrumbs -->
       <div class="p-faq__breadcrumbs">
         <?php if (function_exists("bcn_display")): ?>
