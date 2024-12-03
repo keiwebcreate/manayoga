@@ -64,7 +64,7 @@
 
   @include mq("md") {
     padding-left: calc(50px / 1440px * 100vw);
-    padding-top: 9px;
+    padding-top: 12px;
     padding-bottom: 12px;
     font-size: rem(16);
   }
@@ -82,6 +82,7 @@
 
   @include mq("md") {
     margin-top: 0;
+    overflow: hidden;
   }
 }
 
@@ -94,8 +95,8 @@
   height: 100%;
 
   @include mq("md") {
-    top: -102px;
-    height: calc(100% + 102px);
+    top: 0;
+    height: 100%;
   }
 }
 
@@ -153,82 +154,7 @@
 
   @include mq("md") {
     padding-bottom: 80px;
-    margin-top: 30px;
+    margin-top: 33px;
   }
 }
 
-.c-pagination > nav {
-  gap: 0;
-  justify-content: center;
-}
-
-.c-pagination > nav > div {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-
-  @include mq("md") {
-    gap: 40px;
-  }
-}
-
-.c-pagination > nav > div > span {
-  font-size: 16px;
-  font-weight: $font-weight-700;
-  line-height: 1;
-
-  @include mq("md") {
-    font-size: rem(16);
-  }
-
-  &.current {
-    width: 44px;
-    height: 44px;
-    position: relative;
-    display: grid;
-    place-items: center;
-
-    @include mq("md") {
-      width: 44px;
-      height: 44px;
-    }
-
-    &::after {
-      content: "";
-      width: 44px;
-      height: 44px;
-      border: 1px solid map-get($map: $color, $key: text);
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      translate: -50% -50%;
-
-      @include mq("md") {
-        width: 44px;
-        height: 44px;
-      }
-    }
-  }
-}
-
-.c-pagination > nav > div > a {
-  font-size: 16px;
-  font-weight: $font-weight-700;
-  line-height: 1;
-  display: grid;
-  place-items: center;
-
-  @include mq("md") {
-    font-size: 16px;
-  }
-}
-
-.c-pagination > nav > div > a > svg {
-
-  @include mq("md") {
-    width: 5px;
-    height: 10px;
-  }
-}

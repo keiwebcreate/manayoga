@@ -5,14 +5,77 @@
 }
 
 .c-pagination > nav {
+  gap: 0;
+  justify-content: center;
+}
+
+.c-pagination > nav > div {
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  @include mq("md") {
+    gap: 40px;
+  }
 }
 
-.c-pagination > nav > span {
+.c-pagination > nav > div > span {
+  font-size: 16px;
+  font-weight: $font-weight-700;
+  line-height: 1;
 
+  @include mq("md") {
+    font-size: rem(16);
+  }
+
+  &.current {
+    width: 44px;
+    height: 44px;
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    @include mq("md") {
+      width: 44px;
+      height: 44px;
+    }
+
+    &::after {
+      content: "";
+      width: 44px;
+      height: 44px;
+      border: 1px solid map-get($map: $color, $key: text);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+
+      @include mq("md") {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
 }
 
-.c-pagination > nav > a {
+.c-pagination > nav > div > a {
+  font-size: 16px;
+  font-weight: $font-weight-700;
+  line-height: 1;
+  display: grid;
+  place-items: center;
 
+  @include mq("md") {
+    font-size: 16px;
+  }
+}
+
+.c-pagination > nav > div > a > svg {
+
+  @include mq("md") {
+    width: 5px;
+    height: 10px;
+  }
 }

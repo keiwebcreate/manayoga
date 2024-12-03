@@ -22,7 +22,7 @@
       <div class="p-faq__inner">
         <div class="p-faq__bg">
           <picture class="p-faq__bg-picture">
-            <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/faq/faq-bg-PC3.webp">
+            <source media="(min-width: 768px)" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/faq/faq-bg-PC4.webp">
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/faq/faq-bg-SP.webp" alt="" decoding="async">
           </picture>
         </div>

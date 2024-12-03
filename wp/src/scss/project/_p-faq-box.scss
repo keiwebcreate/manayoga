@@ -23,7 +23,7 @@
 
   @include mq("md") {
     height: 81px;
-    gap: 16px;
+    gap: 21px;
     padding-right: 70px;
     padding-left: 32px;
     padding-top: 14px;
@@ -70,6 +70,7 @@
     font-size: rem(20);
     font-weight: $font-weight-500;
     line-height: $line-height-base;
+    margin-top: 6px;
   }
 }
 
