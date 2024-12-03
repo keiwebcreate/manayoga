@@ -35,3 +35,20 @@ jQuery(document).ready(function($) {
 
 	
 });
+
+
+// FAQアコーディオン
+if (jQuery("div").hasClass("p-faq")) {
+  jQuery(".js-accordion").on("click", function (e) {
+    e.preventDefault();
+
+    if (jQuery(this).hasClass("is-open")) {
+      jQuery(this).removeClass("is-open");
+      jQuery(this).next().slideUp();
+    } else {
+      jQuery(this).addClass("is-open");
+      jQuery(this).next().slideDown();
+    }
+  });
+
+}

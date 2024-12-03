@@ -40,11 +40,21 @@
     top: calc(50% - 2px / 375px * 100vw);
     right: calc(21px /375px * 100vw);
     translate: 0 -50%;
+    transition: rotate 0.3s;
+    rotate: 180deg;
 
     @include mq("md") {
       width: 16px;
       height: 25.276px;
       right: 45px;
+      top: calc(50% - 2px);
+      
+    }
+  }
+
+  &.is-open {
+    &::after {
+      rotate: 0deg;
     }
   }
 }

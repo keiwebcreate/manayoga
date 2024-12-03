@@ -35,11 +35,11 @@
                 <?php the_post(); ?>
                 <li class="p-faq__item">
                   <div class="p-faq__box p-faq-box">
-                    <button type="button" class="p-faq-box__head js-accordion">
+                    <button type="button" class="p-faq-box__head js-accordion is-open">
                       <span class="p-faq-box__head-icon">Q.</span>
                       <span class="p-faq-box__head-text"><?php the_field('q') ?></span>
                     </button>
-                    <div class="p-faq-box__body" style="display: block;">
+                    <div class="p-faq-box__body">
                       <div class="p-faq-box__a">
                         <span class="p-faq-box__a-icon">A.</span>
                         <span class="p-faq-box__a-text"><?php the_field('a') ?></span>
