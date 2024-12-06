@@ -12,4 +12,6 @@ $args = array(
     'screen_reader_text' => ' ',
 );
 the_posts_pagination($args);
+
+
 ?>
