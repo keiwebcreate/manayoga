@@ -4,6 +4,14 @@
 
 <!-- l-main -->
 <main class="l-main">
+  <div class="c-page-title">
+    <div class="c-page-title__wrap">
+      <h2 class="title-en">About
+      </h2>
+      <p class="title-ja">マナヨガについて
+      </p>
+    </div>
+  </div>
   <!-- l-about -->
   <section class="l-about">
     <div class="p-about">
