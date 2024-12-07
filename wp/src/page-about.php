@@ -4,23 +4,17 @@
 
 <!-- l-main -->
 <main class="l-main">
-  <div class="c-page-title">
-    <div class="c-page-title__wrap">
-      <h2 class="title-en">About
-      </h2>
-      <p class="title-ja">マナヨガについて
-      </p>
-    </div>
-  </div>
   <!-- l-about -->
   <section class="l-about">
     <div class="p-about">
-      <!-- p-about__head -->
-      <h2 class="p-about__head">
-        <span class="p-about__head-en">About</span>
-        <span class="p-about__head-ja">マナヨガについて</span>
-      </h2>
-      <!-- /p-about__head -->
+      <div class="c-page-title p-about__title">
+        <div class="c-page-title__wrap p-about__title-wrap">
+          <h2 class="title-en">About
+          </h2>
+          <p class="title-ja">マナヨガについて
+          </p>
+        </div>
+      </div>
       <!-- p-about__breadcrumbs -->
       <div class="p-about__breadcrumbs">
         <?php if (function_exists("bcn_display")): ?>

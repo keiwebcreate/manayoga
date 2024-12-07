@@ -45,7 +45,8 @@
                       
                     </div>
               <div class="p-single-pagination__archive">
-                <a href="<?php echo esc_url(home_url('/')); ?>/blog">一覧へ戻る</a>
+                <?php $cat_link = get_category_link(3); ?>
+                <a href="<?php echo esc_url($cat_link); ?>">一覧へ戻る</a>
               </div>
               <div class="p-single-pagination__next">
                

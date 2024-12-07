@@ -2,17 +2,17 @@
 
 <!-- l-main -->
 <main class="l-main">
+
   <!-- l-faq -->
   <section class="l-faq">
-
     <div class="p-faq">
-      <div class="p-faq__head-wrap">
-        <!-- p-faq__head -->
-        <h2 class="p-faq__head">
-          <span class="p-faq__head-en">FAQ</span>
-          <span class="p-faq__head-ja">よくある質問</span>
-        </h2>
-        <!-- /p-faq__head -->
+      <div class="c-page-title p-faq__title">
+        <div class="c-page-title__wrap p-faq__title-wrap">
+          <h2 class="title-en">FAQ
+          </h2>
+          <p class="title-ja">よくある質問
+          </p>
+        </div>
       </div>
       <!-- p-faq__breadcrumbs -->
       <div class="p-faq__breadcrumbs">

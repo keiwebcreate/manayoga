@@ -3,51 +3,12 @@
 .p-blog {
 }
 
-.p-blog__head-wrap {
-  max-width: 1440px;
-  margin-inline: auto;
+.p-blog__title {
+  margin-block-start: 0 !important;
 }
 
-.p-blog__head {
-  display: flex;
-  flex-direction: column;
-  padding-top: calc(29px / 375px * 100vw);
-  padding-bottom: calc(29px / 375px * 100vw);
-  padding-left: calc(26px / 375px * 100vw);
-  background-image: url(../img/about/about-head-bg-01-SP.svg);
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: calc(280px / 375px * 100vw);
+.p-blog__title-wrap {
 
-  @include mq("md") {
-    background-image: url(../img/about/about-head-bg-01-PC.svg);
-    flex-direction: row;
-    gap: 20px;
-    padding-top: 66px;
-    padding-bottom: 66px;
-    padding-left: calc(121px / 1440px * 100vw);
-    width: calc(872px / 1440px * 100vw);
-    max-width: 872px;
-    align-items: center;
-  }
-
-  @include mq("xxl") {
-    padding-left: 121px;
-  }
-}
-
-.p-blog__head-en {
-  font-family: $font-family-en;
-  font-size: get_vw(40);
-  font-weight: $font-weight-600;
-  letter-spacing: calc(1.2px / 375px * 100vw);
-
-  @include mq("md") {
-    font-size: rem(60);
-    font-weight: $font-weight-700;
-    letter-spacing: normal;
-  }
 }
 
 .p-blog__head-ja {

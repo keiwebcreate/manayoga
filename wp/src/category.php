@@ -5,13 +5,13 @@
   <!-- l-blog -->
   <section class="l-blog">
     <div class="p-blog">
-      <div class="p-blog__head-wrap">
-        <!-- p-blog__head -->
-        <h2 class="p-blog__head">
-          <span class="p-blog__head-en">Blog</span>
-          <span class="p-blog__head-ja">ブログ</span>
-        </h2>
-        <!-- /p-blog__head -->
+      <div class="c-page-title p-blog__title">
+        <div class="c-page-title__wrap  p-blog__title-wrap">
+          <h2 class="title-en">Blog
+          </h2>
+          <p class="title-ja">ブログ
+          </p>
+        </div>
       </div>
       <!-- p-blog__breadcrumbs -->
       <div class="p-blog__breadcrumbs">
