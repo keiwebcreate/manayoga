@@ -49,6 +49,14 @@
   }
 }
 
+.p-single-pagination__prev > a  {
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .p-single-pagination__archive {
   font-size: get_vw(15);
   font-weight: $font-weight-500;
@@ -59,11 +67,27 @@
   }
 }
 
+.p-single-pagination__archive > a {
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .p-single-pagination__next {
   width: calc(55px / 375px * 100vw);
 
   @include mq("md") {
     width: 55px;
+  }
+}
+
+.p-single-pagination__next > a {
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
   }
 }
 

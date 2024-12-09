@@ -32,6 +32,14 @@
   }
 }
 
+.p-about__breadcrumbs > span > a{
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
 .p-about__inner {
   padding-left: calc(22px / 375px * 100vw);
   padding-right: calc(21px / 375px * 100vw);
