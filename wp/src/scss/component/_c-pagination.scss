@@ -1,7 +1,6 @@
 @use "../global" as *;
 
 .c-pagination {
-  
 }
 
 .c-pagination > nav {
@@ -78,7 +77,6 @@
 }
 
 .c-pagination > nav > div > a > svg {
-
   @include mq("md") {
     width: 8px;
     height: 12px;
