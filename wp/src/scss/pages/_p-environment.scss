@@ -23,7 +23,7 @@
             top: 0;
             flex-direction: row;
             align-items: center;
-            justify-content: end;
+            justify-content: flex-end;
             gap: min(get_vw(15), rem(48));
         }
     }
@@ -43,21 +43,24 @@
             line-height: 1.8;
             order: 1;
             text-align: center;
+            margin-block-start: get_vw(2);
 
             span {
                 font-size: get_vw(63.936);
                 font-weight: 700;
                 color: map-get($color, 'main');
+                vertical-align: get_vw(-3);
             }
 
             @include mq('md') {
                 font-size: min(get_vw(40,1290),40px);
                 font-weight: 700;
                 line-height: 1.5;
-                margin-block-start: rem(2);
+                margin-block-start: rem(21);
 
                 span {
                     font-size: min(get_vw(96,1290),96px);
+                    vertical-align: -6px;
                 }
             }
         }
@@ -72,7 +75,7 @@
                 font-size: rem(15);
                 font-weight: 500;
                 line-height: normal;
-                margin-block-start: rem(5);
+                margin-block-start: 0;
             }
         }
     

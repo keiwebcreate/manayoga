@@ -17,6 +17,9 @@ add_action("after_setup_theme", "my_setup");
 // スクリプト読み込み css,js
 function my_script_init() {
   if ( is_front_page() ) {
+    wp_enqueue_style("swiper", "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css", array(), '1.0.0', "all");
+    wp_enqueue_script("swiper-js", "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js", array(), '1.0.0', true);
+    wp_enqueue_script("my-swiper", get_template_directory_uri() . "/assets/js/swiper.js", array(), filemtime( get_theme_file_path( '/assets/js/swiper.js' ) ), true);
   }
   wp_enqueue_style("my", get_template_directory_uri() . "/assets/css/style.css", array(), filemtime(get_theme_file_path('assets/css/style.css')), "all");
   wp_enqueue_script("my", get_template_directory_uri() . "/assets/js/script.js", array("jquery"), filemtime( get_theme_file_path( 'assets/js/script.js' ) ), true);

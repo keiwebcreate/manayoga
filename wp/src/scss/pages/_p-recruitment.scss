@@ -12,6 +12,11 @@
             height: 537px;
         }
 
+        @include mq('xxl') {
+            aspect-ratio: 1440 / 537;
+            height: auto;
+        }
+
         img {
             object-fit: cover;
             object-position: 40%;
@@ -38,6 +43,12 @@
                 width: 476px;
                 bottom: rem(85);
                 left: 73.5%;
+            }
+
+            @include mq('xxl') {
+                font-size: get_vw(32, 1440);
+                width: get_vw(476, 1440);
+                bottom: get_vw(85, 1440);
             }
 
             &::before {
