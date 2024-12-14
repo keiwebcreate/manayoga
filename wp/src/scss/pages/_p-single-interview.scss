@@ -27,23 +27,8 @@
                     aspect-ratio: auto;
                     max-height: 807px;
                     width: 100%;
+                    object-position: 100% 30%;
                 }
-            }
-        }
-        
-        .name {
-            position: absolute;
-            left: calc(50% - get_vw(4.5));
-            top: get_vw(69.9);
-            color: map-get($color, 'sub2');
-            font-family: $font-family-en;
-            font-size: get_vw(24);
-            font-weight: 700;
-
-            @include mq('md') {
-                font-size: min(get_vw(60,1440),60px);
-                top: min(get_vw(163,1440),163px);
-                left: calc(50% + min(get_vw(69,1440),69px));
             }
         }
         
@@ -53,20 +38,42 @@
             font-size: get_vw(24);
             font-weight: 500;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: get_vw(248.9);
+            right: 50%;
+            transform: translateX(50%);
+            bottom: get_vw(120);
             width: get_vw(351);
 
             @include mq('md') {
                 padding: min(get_vw(20,1440),20px) min(get_vw(40,1440),40px);
                 font-size: clamp_vw(20,32,768,1440);
-                top: min(get_vw(403,1440),403px);
+                bottom: 288px;
                 width: fit-content;
                 transform: none;
-                left: calc(50% + 6px);
+                right: max(calc(50vw - (720px - 141px)),20px);
             }
-        }        
+        }  
+
+        .name {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            right: 50%;
+            transform: translateX(50%);
+            bottom: get_vw(57);
+            color: map-get($color, 'base');
+            font-family: $font-family-en;
+            font-size: get_vw(32);
+            font-weight: 700;
+            filter: drop-shadow(0px 4px 8px rgba(227, 172, 188, 0.53));
+
+            @include mq('md') {
+                font-size: min(get_vw(77.669,1440),77.669px);
+                bottom: 167px;
+                transform: none;
+                right: max(calc(50vw - (720px - 132px)),20px);
+                width: fit-content;
+            }
+        }
     }
 
     &__content {
@@ -240,9 +247,9 @@
                 padding-block: rem(15) rem(41);
                 
                 &::before {
-                    top: 120px;
-                    left: 470px;
-                    width: rem(577);
+                    top: 186px;
+                    left: 485px;
+                    width: rem(255);
                 }
             }
         }

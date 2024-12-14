@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
-<?php get_template_part('template-parts/page-title'); ?>
+<div class="c-page-title">
+    <div class="c-page-title__wrap">
+        <h2 class="title-en">
+        Interview
+        </h2>
+        <p class="title-ja">
+        先輩インタビュー
+        </p>
+    </div>
+</div>
 <?php get_template_part('template-parts/breadcrumb'); ?>
 
 <div class="l-inner p-archive-interview">
@@ -8,7 +17,7 @@
     <?php
         // カスタム投稿タイプ "interview" の取得
         $args = array(
-            'post_type' => 'interview', // カスタム投稿タイプのスラッグ
+            'post_type' => 'interview2', // カスタム投稿タイプのスラッグ
             'order' => 'ASC',
             'posts_per_page' => 4,
         );

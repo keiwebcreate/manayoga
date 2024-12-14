@@ -6,11 +6,11 @@
         <div class="thumbnail">
             <?php  the_post_thumbnail(); ?>
         </div>
-        <div class="name">
-            <?php  the_field('name'); ?>
-        </div>
         <div class="head">
             <?php  the_field('single-head') ?>
+        </div>
+        <div class="name">
+            <?php  the_field('name'); ?>
         </div>
     </div>
 
