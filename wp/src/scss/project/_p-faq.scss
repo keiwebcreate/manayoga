@@ -1,0 +1,132 @@
+@use "../global" as *;
+
+.p-faq {
+}
+
+.p-faq__title {
+  margin-block-start: 0 !important;
+}
+
+.p-faq__title-wrap {
+
+}
+
+.p-faq__breadcrumbs {
+  padding-top: calc(14px / 375px * 100vw);
+  padding-bottom: calc(12px / 375px * 100vw);
+  padding-left: calc(24px / 375px * 100vw);
+  font-size: get_vw(15);
+  line-height: 1.6;
+
+  @include mq("md") {
+    padding-left: calc(50px / 1440px * 100vw);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: rem(16);
+  }
+
+  @include mq("xxl") {
+    padding-left: 50px;
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+}
+
+.p-faq__breadcrumbs > span > a {
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.p-faq__inner {
+  position: relative;
+  margin-top: calc(38px / 375px * 100vw);
+
+  @include mq("md") {
+    margin-top: 0;
+    overflow: hidden;
+  }
+}
+
+.p-faq__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+
+  @include mq("md") {
+    top: 0;
+    height: 100%;
+  }
+}
+
+.p-faq__bg-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+
+    @include mq("md") {
+      object-position: center center;
+    }
+  }
+}
+
+.p-faq__content {
+
+  @include mq("md") {
+  }
+}
+
+.p-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(31px / 375px * 100vw);
+  padding-left: calc(23px / 375px * 100vw);
+  padding-right: calc(22px / 375px * 100vw);
+
+  @include mq("md") {
+    gap: 30px;
+    padding-top: 80px;
+    max-width: 1440px;
+    margin-inline: auto;
+  }
+
+
+  @include mq("xl") {
+    padding-left: calc(220px / 1440px * 100vw);
+    padding-right: calc(220px / 1440px * 100vw);
+  }
+
+  @include mq("xxl") {
+    padding-left: 220px;
+    padding-right: 220px;
+  }
+}
+
+.p-faq__item {
+  width: 100%;
+}
+
+.p-faq__box {
+}
+
+.p-faq__pagination {
+  margin-top: calc(31px / 375px * 100vw);
+  padding-bottom: calc(40px / 375px * 100vw);
+
+  @include mq("md") {
+    padding-bottom: 80px;
+    margin-top: 33px;
+  }
+}
+

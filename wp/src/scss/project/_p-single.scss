@@ -23,8 +23,12 @@
   }
 }
 
-.p-single__breadcrumbs > span {
-  // flex-shrink: 0;
+.p-single__breadcrumbs > span > a {
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 .p-single__inner {

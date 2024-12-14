@@ -1,0 +1,100 @@
+@use "../global" as *;
+
+.p-faq-box {
+  background-color: map-get($map: $color, $key: main);
+  border-radius: 20px;
+}
+
+.p-faq-box__head {
+  background-color: map-get($map: $color, $key: base);
+  display: flex;
+  align-items: center;
+  gap: calc(21px / 375px * 100vw);
+  width: 100%;
+  padding-right: calc(32px / 375px * 100vw);
+  padding-top: calc(12px /375px * 100vw);
+  padding-bottom: calc(12px /375px * 100vw);
+  padding-left: calc(32px /375px * 100vw);
+  border-radius: 20px;
+  position: relative;
+  border: 1px solid map-get($map: $color, $key: main);
+  height: calc(81px /375px * 100vw);
+  box-sizing: border-box;
+
+  @include mq("md") {
+    height: 81px;
+    gap: 21px;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-top: 14px;
+    padding-bottom: 7px;
+  }
+}
+
+.p-faq-box__head-icon {
+  font-family: $font-family-en;
+  font-size: get_vw(24);
+  font-weight: $font-weight-700;
+  flex-shrink: 0;
+
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+
+.p-faq-box__head-text {
+  font-size: get_vw(15);
+  font-weight: $font-weight-700;
+  line-height: normal;
+  margin-top: calc(9px /375px * 100vw);
+
+  @include mq("md") {
+    font-size: rem(20);
+    font-weight: $font-weight-500;
+    line-height: $line-height-base;
+    margin-top: 6px;
+  }
+}
+
+.p-faq-box__body {
+  padding-top: calc(19px /375px * 100vw);
+  padding-left: calc(32px /375px * 100vw);
+  padding-right: calc(16px /375px * 100vw);
+  padding-bottom: calc(20px /375px * 100vw);
+
+  @include mq("md") {
+    padding-top: 20px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 20px;
+  }
+}
+
+.p-faq-box__a {
+  display: flex;
+  gap: calc(23px /375px * 100vw);
+
+  @include mq("md") {
+    gap: 23px;
+  }
+}
+
+.p-faq-box__a-icon {
+  font-family: $font-family-en;
+  font-size: get_vw(24);
+  font-weight: $font-weight-700;
+  flex-shrink: 0;
+
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+
+.p-faq-box__a-text {
+  font-size: get_vw(15);
+  line-height: 1.6;
+
+  @include mq("md") {
+    font-size: rem(15);
+  }
+}

@@ -1,0 +1,10 @@
+@use "../global" as *;
+
+.l-faq {
+  margin-top: 8px;
+  
+
+  @include mq("md") {
+    margin-top: 48px;
+  }
+}
