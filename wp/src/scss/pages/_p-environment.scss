@@ -4,11 +4,28 @@
     margin-block-start: get_vw(-10);
     padding-block-end: get_vw(60);
     position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: calc(100% + get_vw(234));
+        background: url(../img/environment/env-bg-sp.webp) no-repeat top center / cover;
+        top: get_vw(-234);
+        left: 0;
+        z-index: -1;
+    }
     
     @include mq('md') {
         max-width: 1440px;
         margin-block-start: 0;
         padding-block-end: rem(120);
+
+        &::before {
+            background: url(../img/environment/env-bg-pc.webp) no-repeat top center / cover;
+            height: 100%;
+            top: 0;
+        }
     }
     
     &__fv {

@@ -242,15 +242,47 @@
         </span>
       </h2>
       <div class="p-top-faq__items">
-        <div class="p-top-faq__item">
-        </div>
+        <?php   
+          // カスタム投稿タイプ "faq" の取得
+          $args = array(
+            'post_type' => 'faq', // カスタム投稿タイプのスラッグ
+            'posts_per_page' => 3,
+          );
+
+          $query = new WP_Query($args);
+
+          if ($query->have_posts()):
+            while ($query->have_posts()): $query->the_post(); ?>
+            <div class="p-top-faq__item">
+              <div class="p-faq__box p-faq-box">
+                <button type="button" class="p-faq-box__head">
+                  <span class="p-faq-box__head-icon">Q.</span>
+                  <span class="p-faq-box__head-text"><?php the_field('q') ?></span>
+                </button>
+                <div class="p-faq-box__body">
+                  <div class="p-faq-box__a">
+                    <span class="p-faq-box__a-icon">A.</span>
+                    <span class="p-faq-box__a-text"><?php the_field('a') ?></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <?php  
+            endwhile;
+          endif;
+
+          // クエリのリセット
+          wp_reset_postdata();
+        ?>
       </div>
-      <a href="" class="button p-top__button">
-        Read more
-        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-          <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
-        </svg>
-      </a>
+      <div class="p-top-faq__button">
+        <a href="<?php echo get_post_type_archive_link('faq'); ?>" class="button p-top__button">
+          Read more
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
+            <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -268,10 +300,45 @@
       <div class="p-top-blog__card-wrap">
         <div class="p-top-blog__swiper swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide p-top-blog__slide">
-              <!-- スライドの中身 -->
-              
-            </div>
+            <?php   
+             // スマホかどうかをチェック（サーバー側で判定する例）
+              $is_mobile = wp_is_mobile(); // true: スマホ, false: PC
+
+              // 表示する投稿件数を条件で分ける
+              $posts_per_page = $is_mobile ? 3 : 6;
+
+              // カテゴリーで取得
+              $args = array(
+                'post_type'      => 'post',          // 投稿タイプ
+                'category_name'  => 'blog',         // カテゴリスラッグ
+                'posts_per_page' => $posts_per_page,
+              );
+              $query = new WP_Query($args);
+
+              if ($query->have_posts()):
+                while ($query->have_posts()): $query->the_post();
+                ?>
+                <div class="swiper-slide p-top-blog__slide">
+                  <!-- スライドの中身 -->
+                   <a href="<?php the_permalink(); ?>">
+                    <div class="article-img">
+                      <?php  the_post_thumbnail(); ?>
+                    </div>
+                    <div class="article-date">
+                      <?php the_time('Y.n.j'); ?>
+                    </div>
+                    <div class="article-head">
+                      <?php  the_title(); ?>
+                    </div>
+                   </a>
+                </div>
+                <?php  
+                endwhile;
+              endif;
+
+              // クエリのリセット
+              wp_reset_postdata();
+            ?>
           </div>
         </div>
 
@@ -289,12 +356,15 @@
         </div>
       </div>
 
-      <a href="" class="button p-top__button">
-        Read more
-        <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-          <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
-        </svg>
-      </a>
+      <div class="p-top-blog__button">
+        <a href="<?php echo get_category_link(get_cat_ID('blog')) ?>" class="button p-top__button">
+          Read more
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
+            <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
+          </svg>
+        </a>
+      </div>
+      
     </div>
   </section>
 </div>

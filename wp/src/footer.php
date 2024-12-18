@@ -18,7 +18,7 @@
 		<div class="l-footer__wrap">
 			<div class="l-footer__sp-wrap">
 				<h1 class="l-footer__logo">
-					<a href="">
+					<a href="<?php  echo esc_url(home_url()); ?>">
 						<!-- logo -->
 						 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="">
 					</a>
@@ -32,7 +32,7 @@
 							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/youtube_social_icon_dark.webp" alt="">
 						</a>
 					</div>
-					<a href="" class="cta">
+					<a href="<?php echo esc_url(home_url('/recruitment')); ?>" class="cta">
 						募集要項
 						<span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none">
@@ -42,45 +42,21 @@
 					</a>
 				</div>
 			</div>
-			<nav class="l-footer__nav">
-				<ul class="l-footer__nav-items">
-					<li class="l-footer__nav-item">
-						<a href="">
-							マナヨガについて
-						</a>
-						<a href="" class="sub-link">
-							- 代表メッセージ
-						</a>
-					</li>
-					<li class="l-footer__nav-item">
-						<a href="">
-							先輩インタビュー
-						</a>
-					</li>
-					<li class="l-footer__nav-item">
-						<a href="">
-							働く環境
-						</a>
-					</li>
-					<li class="l-footer__nav-item">
-						<a href="">
-							ブログ
-						</a>
-					</li>
-					<li class="l-footer__nav-item">
-						<a href="">
-							よくある質問
-						</a>
-					</li>
-				</ul>
-			</nav>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'global',
+					'menu_class' => 'l-footer__nav-items',
+					'container' => 'nav',
+					'container_class' => 'l-footer__nav',
+				) );
+			?>
 		</div>
 
 		<div class="l-footer__policy">
 			<a href="">
 				プライバシーポリシー
 			</a>
-			<a href="">
+			<a href="" target="_blank" rel="noopener">
 				外部サイト
 				<span>
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">

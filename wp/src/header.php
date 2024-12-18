@@ -30,7 +30,7 @@
       </button>
       
       <nav class="l-header__nav">
-        <a class="l-header__nav-cta" href="">
+        <a class="l-header__nav-cta" href="<?php echo esc_url(home_url('/recruitment')); ?>">
           2026’募集要項
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none">
@@ -38,42 +38,19 @@
             </svg>
           </span>
         </a>
-        <ul class="l-header__nav-items">
-          <li class="l-header__nav-item">
-            <a href="">
-              マナヨガについて
-            </a>
-            <a href="" class="sub-link">
-              - 代表メッセージ
-            </a>
-          </li>
-          <li class="l-header__nav-item">
-            <a href="">
-              先輩インタビュー
-            </a>
-          </li>
-          <li class="l-header__nav-item">
-            <a href="">
-              働く環境
-            </a>
-          </li>
-          <li class="l-header__nav-item">
-            <a href="">
-              ブログ
-            </a>
-          </li>
-          <li class="l-header__nav-item">
-            <a href="">
-              よくある質問
-            </a>
-          </li>
-        </ul>
+        <?php
+          wp_nav_menu( array(
+            'theme_location' => 'global',
+            'menu_class' => 'l-header__nav-items',
+            'container'      => false,
+          ) );
+        ?>
         <a class="l-header__nav-logo" href="<?php  echo esc_url(home_url()); ?>">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="マナヨガリクルート">
         </a>
       </nav>
 
-      <a class="l-header__cta">
+      <a class="l-header__cta" href="<?php echo esc_url(home_url('/recruitment')); ?>">
         2026’募集要項
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" viewBox="0 0 18 12" fill="none">

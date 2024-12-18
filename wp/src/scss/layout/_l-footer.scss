@@ -132,28 +132,28 @@
             margin-block-start: 0;
             justify-content: space-between;
         }
-    }
+
+        li {
+            color: map-get($color, 'footer-text');
+            font-size: get_vw(15);
+            font-weight: 500;
+            line-height: normal;
     
-    &__nav-item {
-        color: map-get($color, 'footer-text');
-        font-size: get_vw(15);
-        font-weight: 500;
-        line-height: normal;
-
-        @include mq('md') {
-            font-size: rem(20);
-
-        }
-        
-        .sub-link {
-            display: block;
-            margin-block-start: get_vw(8);
-            margin-inline-start: get_vw(4);
-
-            @include mq('lg') {
-                margin-block-start: rem(8);
-                margin-inline-start: 0;
-                font-size: rem(14);
+            @include mq('md') {
+                font-size: rem(20);
+    
+            }
+            
+            .sub-menu {
+                display: block;
+                margin-block-start: get_vw(8);
+                margin-inline-start: get_vw(4);
+    
+                @include mq('lg') {
+                    margin-block-start: rem(8);
+                    margin-inline-start: 0;
+                    font-size: rem(14);
+                }
             }
         }
     }
