@@ -1,17 +1,11 @@
 <?php get_header(); ?>
+<?php get_template_part('template-parts/breadcrumb'); ?>
 
 <!-- l-main -->
     <main class="l-main">
       <!-- l-single -->
       <section class="l-single">
         <div class="p-single">
-          <!-- p-single__breadcrumbs -->
-          <div class="p-single__breadcrumbs">
-            <?php if (function_exists("bcn_display")): ?>
-            <?php bcn_display(); ?>
-            <?php endif; ?>
-          </div>
-          <!-- /p-single__breadcrumbs -->
           <?php if (have_posts()) : ?> <!--記事があれば表示する-->
           <?php while (have_posts()) : ?> <!--記事数文ループする-->
           <?php the_post(); ?>

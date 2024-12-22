@@ -1,23 +1,11 @@
 <?php get_header(); ?>
-
+<?php get_template_part('template-parts/page-title'); ?>
+<?php get_template_part('template-parts/breadcrumb'); ?>
 <!-- l-main -->
     <main class="l-main">
       <!-- l-blog -->
       <section class="l-blog">
         <div class="p-blog">
-          <!-- p-blog__head -->
-          <h2 class="p-blog__head">
-            <span class="p-blog__head-en">Blog</span>
-            <span class="p-blog__head-ja">ブログ</span>
-          </h2>
-          <!-- /p-blog__head -->
-          <!-- p-blog__breadcrumbs -->
-          <div class="p-blog__breadcrumbs">
-            <?php if (function_exists("bcn_display")): ?>
-            <?php bcn_display(); ?>
-            <?php endif; ?>
-          </div>
-          <!-- /p-blog__breadcrumbs -->
           <div class="p-blog__inner">
             <div class="p-blog__content">
               <!-- p-blog__list -->
