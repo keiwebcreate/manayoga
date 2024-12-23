@@ -96,6 +96,7 @@
 
 .p-about-block__image {
   width: calc(100% - 1px);
+  border-radius: 20px;
 
   @include mq("md") {
     width: calc(527px / 1440px * 100vw);
