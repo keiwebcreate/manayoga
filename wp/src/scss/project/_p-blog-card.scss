@@ -6,16 +6,19 @@
 
 .p-blog-card__thumbnail {
   width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
 
   img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
+   
 
     @include mq("md") {
       aspect-ratio: 380 / 200;
       object-fit: cover;
       object-position: center center;
+      transition: scale 0.5s ease;
     }
   }
 }

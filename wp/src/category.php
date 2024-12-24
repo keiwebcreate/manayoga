@@ -23,10 +23,12 @@
                       <time datetime="<?php the_time("c"); ?>" class="p-blog-card__date"><?php the_time("Y.m.d"); ?></time>
                       <h3 class="p-blog-card__title"><?php the_title(); ?></h3>
                       <ul class="p-blog-card__tag-list">
-                        <li class="p-blog-card__tag-item">#やりがい</li>
-                        <li class="p-blog-card__tag-item">#キャリア</li>
-                        <li class="p-blog-card__tag-item">#ストーリー</li>
-                        <li class="p-blog-card__tag-item">#キャリア</li>
+                        <?php if(get_the_tags()): ?>
+                        <?php $tags = get_the_tags(); ?>
+                        <?php foreach ($tags as $tag): ?>
+                          <li class="p-blog-card__tag-item"><?php echo $tag->name; ?></li>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
                       </ul>
                     </article>
                   </a>

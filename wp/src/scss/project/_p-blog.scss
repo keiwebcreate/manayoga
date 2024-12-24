@@ -89,9 +89,16 @@
   display: block;
     transition: opacity 0.3s;
 
+@media (any-hover: hover) {
   &:hover {
-    opacity: 0.7;
+    .p-blog-card__thumbnail {
+      img {
+        scale: 1.2;
+      }
+    }
   }
+}
+
 }
 
 .p-blog__card {
