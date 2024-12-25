@@ -12,7 +12,8 @@
         height: calc(100% + get_vw(234));
         background: url(../img/environment/env-bg-sp.webp) no-repeat top center / cover;
         top: get_vw(-234);
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: -1;
     }
     
