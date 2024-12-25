@@ -32,17 +32,29 @@
             display: inline-block;
             padding-block: get_vw(17);
             text-align: center;
+            border: 2px solid map-get($color, 'accent');
             background-color: map-get($color, 'accent');
             border-radius: 8px;
             color: map-get($color, 'base');
             font-size: get_vw(24);
             font-family: $font-family-en;
+            transition: all 0.3s;
     
             span {
                 margin-inline-start: get_vw(10);
                 svg {
                     width: get_vw(16);
                     vertical-align: 4px;
+                }
+            }
+
+            &:hover {
+                background-color: map-get($color, 'base');
+                color: map-get($color, 'accent');
+                svg {
+                    path {
+                        fill: map-get($color, 'accent');
+                    }
                 }
             }
     
@@ -101,6 +113,11 @@
             display: inline-block;
             width: 100%;
             height: 100%;
+            transition: all 0.3s;
+
+            &:hover {
+                opacity: 0.6;
+            }
         }
 
         @include mq('md') {
@@ -138,6 +155,13 @@
             font-size: get_vw(15);
             font-weight: 500;
             line-height: normal;
+            transition: all 0.3s;
+
+            a {
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
     
             @include mq('md') {
                 font-size: rem(20);
@@ -182,6 +206,11 @@
                 line-height: 1;
                 padding: get_vw(8);
                 vertical-align: middle;
+                transition: all 0.3s;
+
+                &:hover {
+                    border-radius: 0;
+                }
 
                 // youtubeアイコン調節
                 &:nth-child(2) {
@@ -223,6 +252,8 @@
             font-weight: 500;
             line-height: normal;
             color: map-get($color, 'footer-text');
+            background-color: map-get($color, 'base');
+            transition: all 0.3s;
 
             svg {
                 width: get_vw(16);
@@ -230,12 +261,15 @@
                 vertical-align: 2px;
             }
 
+            &:hover {
+                opacity: 0.6;
+            }
+
             @include mq('md') {
                 width: 186px;
                 padding-block: rem(11);
                 font-size: rem(20);
                 line-height: 1.5;
-                background-color: map-get($color, 'base');
 
                 svg {
                     margin-inline-start: rem(10);

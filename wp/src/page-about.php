@@ -1,27 +1,13 @@
 <?php /* Template Name: about */ ?>
 
 <?php get_header(); ?>
-
+<?php get_template_part('template-parts/page-title'); ?>
+<?php get_template_part('template-parts/breadcrumb'); ?>
 <!-- l-main -->
 <main class="l-main">
   <!-- l-about -->
   <section class="l-about">
     <div class="p-about">
-      <div class="c-page-title p-about__title">
-        <div class="c-page-title__wrap p-about__title-wrap">
-          <h2 class="title-en">About
-          </h2>
-          <p class="title-ja">マナヨガについて
-          </p>
-        </div>
-      </div>
-      <!-- p-about__breadcrumbs -->
-      <div class="p-about__breadcrumbs">
-        <?php if (function_exists("bcn_display")): ?>
-          <?php bcn_display(); ?>
-        <?php endif; ?>
-      </div>
-      <!-- /p-about__breadcrumbs -->
       <div class="p-about__inner">
         <div class="p-about__content">
           <!-- p-about__blocks -->
