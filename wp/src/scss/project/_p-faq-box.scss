@@ -20,6 +20,7 @@
   border: 1px solid map-get($map: $color, $key: main);
   height: calc(81px /375px * 100vw);
   box-sizing: border-box;
+  pointer-events: none;
 
   @include mq("md") {
     height: 81px;
