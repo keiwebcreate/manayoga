@@ -4,7 +4,7 @@
 <!-- l-main -->
 <main class="l-main">
   <!-- l-single -->
-  <section class="l-single">
+  <article class="l-single">
     <div class="p-single">
       <?php if (have_posts()) : ?>
         <?php while (have_posts()) : ?>
@@ -50,7 +50,7 @@
         <?php endwhile; ?>
       <?php endif; ?>
     </div>
-  </section>
+  </article>
   <!-- /l-single -->
 
   <?php get_footer(); ?>

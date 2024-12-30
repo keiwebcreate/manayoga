@@ -255,10 +255,10 @@
             while ($query->have_posts()): $query->the_post(); ?>
             <div class="p-top-faq__item">
               <div class="p-faq__box p-faq-box">
-                <button type="button" class="p-faq-box__head">
+                <div type="button" class="p-faq-box__head">
                   <span class="p-faq-box__head-icon">Q.</span>
                   <span class="p-faq-box__head-text"><?php the_field('q') ?></span>
-                </button>
+                </div>
                 <div class="p-faq-box__body">
                   <div class="p-faq-box__a">
                     <span class="p-faq-box__a-icon">A.</span>
