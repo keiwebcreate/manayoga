@@ -147,6 +147,7 @@
   padding-bottom: 19px;
   margin-top: 22px;
   border-radius: 20px;
+  overflow: hidden;
 
   @include mq("md") {
     width: calc(527px / 1440px * 100vw);

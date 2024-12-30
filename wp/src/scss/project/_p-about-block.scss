@@ -67,7 +67,6 @@
   }
 
   @include mq("lg") {
-    // font-size: rem(90);
     margin-right: -40px;
   }
 
@@ -97,6 +96,7 @@
 .p-about-block__image {
   width: calc(100% - 1px);
   border-radius: 20px;
+  overflow: hidden;
 
   @include mq("md") {
     width: calc(527px / 1440px * 100vw);
