@@ -10,7 +10,7 @@
 
 .c-pagination > nav > div {
   display: flex;
-  gap: 20px;
+  gap: calc(20px / 375px * 100vw);
   justify-content: center;
   align-items: center;
 
@@ -20,7 +20,7 @@
 }
 
 .c-pagination > nav > div > span {
-  font-size: 16px;
+  font-size: get_vw(16);
   font-weight: $font-weight-700;
   line-height: 1;
 
@@ -29,8 +29,8 @@
   }
 
   &.current {
-    width: 44px;
-    height: 44px;
+    width: calc(44px / 375px * 100vw);
+    height: calc(44px / 375px * 100vw);
     position: relative;
     display: grid;
     place-items: center;
@@ -42,8 +42,8 @@
 
     &::after {
       content: "";
-      width: 44px;
-      height: 44px;
+      width: calc(44px / 375px * 100vw);
+      height: calc(44px / 375px * 100vw);
       border: 1px solid map-get($map: $color, $key: text);
       border-radius: 50%;
       position: absolute;
@@ -60,7 +60,7 @@
 }
 
 .c-pagination > nav > div > a {
-  font-size: 16px;
+  font-size: get_vw(16);
   font-weight: $font-weight-700;
   line-height: 1;
   display: grid;
@@ -73,16 +73,17 @@
     font-size: 16px;
   }
 
-@media (any-hover: hover) {
-  &:hover {
-    translate: 0 -4px;
-    transition: translate 0.3s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      translate: 0 -4px;
+      transition: translate 0.3s ease;
+    }
   }
 }
 
-}
-
 .c-pagination > nav > div > a > svg {
+    width: calc(8px / 375px * 100vw);
+    height: calc(12px / 375px * 100vw);
   @include mq("md") {
     width: 8px;
     height: 12px;
