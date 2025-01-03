@@ -3,38 +3,10 @@
 
 <!-- l-main -->
 <main class="l-main">
+  <?php get_template_part('template-parts/page-title'); ?>
+  <?php get_template_part('template-parts/breadcrumb'); ?>
   <div class="l-404">
     <div class="p-404">
-      <div class="c-page-title p-404__title">
-        <div class="c-page-title__wrap p-404__title-wrap">
-          <h2 class="title-en">
-            <?php
-            if (is_404()) {
-              echo esc_html('404 Page');
-            } else {
-              the_title();
-            }
-            ?>
-          </h2>
-          <?php if (!is_404()): ?>
-            <p class="title-ja">
-              <?php
-              // 固定ページや投稿の抜粋を表示
-              if (has_excerpt()) {
-                echo get_the_excerpt();
-              }
-              ?>
-            </p>
-          <?php endif; ?>
-        </div>
-      </div>
-      <!-- p-404__breadcrumbs -->
-      <div class="p-404__breadcrumbs">
-        <?php if (function_exists("bcn_display")): ?>
-          <?php bcn_display(); ?>
-        <?php endif; ?>
-      </div>
-      <!-- /p-404__breadcrumbs -->
       <div class="p-404__inner">
         <div class="p-404__content">
           <h3 class="p-404__lead">ページが見つかりません。</h3>
