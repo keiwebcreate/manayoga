@@ -68,7 +68,7 @@
 }
 
 .p-single__index-wrap > div {
-  padding-top: calc(28px / 375px * 100vw)  !important;
+  padding-top: calc(28px / 375px * 100vw) !important;
   padding-left: calc(30px / 375px * 100vw) !important;
   padding-bottom: calc(32px / 375px * 100vw) !important;
   padding-right: calc(32px / 375px * 100vw) !important;
@@ -130,7 +130,6 @@
   @include mq("md") {
     font-size: rem(14) !important;
   }
-
 }
 
 .p-single__index-wrap--pc {
@@ -185,10 +184,13 @@
   margin-top: calc(8px / 375px * 100vw);
   margin-bottom: calc(21px / 375px * 100vw);
   width: 100%;
+  border-radius: calc(12px / 375px * 100vw);
+  overflow: hidden;
 
   @include mq("md") {
     margin-top: 8px;
     margin-bottom: 56px;
+     border-radius: 15px;
   }
 
   img {
@@ -203,9 +205,9 @@
 .p-single__column-body > h2 {
   padding-top: calc(14px / 375px * 100vw);
   padding-bottom: calc(12px / 375px * 100vw);
-  padding-left:  calc(23px / 375px * 100vw);
+  padding-left: calc(23px / 375px * 100vw);
   padding-right: calc(24px / 375px * 100vw);
-  background-color: #EAE9E9;
+  background-color: #eae9e9;
   border-bottom: 4px solid map-get($map: $color, $key: main);
   font-size: get_vw(20);
   font-weight: $font-weight-500;
@@ -245,8 +247,6 @@
       height: 24px;
     }
   }
-
-  
 }
 
 h3 {
@@ -283,10 +283,13 @@ h3 {
 
 .p-single__column-body > figure {
   margin-top: calc(40px / 375px * 100vw);
+  border-radius: calc(6px / 375px * 100vw);
+  overflow: hidden;
 
   @include mq("md") {
     margin-top: 40px;
     max-width: 364px;
+     border-radius: 10px;
   }
 }
 
