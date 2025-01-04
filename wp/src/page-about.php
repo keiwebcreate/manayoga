@@ -55,7 +55,7 @@
           </div>
           <!-- /p-about__blocks -->
           <!-- p-about__CEO-message -->
-          <div class="p-about__CEO-message p-about-CEO-message">
+          <div id="about-ceo" class="p-about__CEO-message p-about-CEO-message">
             <div class="p-about-CEO-message__top">
               <div class="p-about-CEO-message__top-content-wrap">
                 <h3 class="p-about-CEO-message__head">
