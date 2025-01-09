@@ -345,15 +345,15 @@
         </div>
 
         <div class="swiper-button-prev">
-          <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-            <circle cx="21" cy="21" r="20.3106" stroke="#332C2F" stroke-width="1.37885"/>
-            <path d="M23.165 26.3232L18.3524 21.9158C18.1108 21.6946 18.1141 21.3129 18.3595 21.0959L23.165 16.8468" stroke="#332C2F" stroke-width="1.37885" stroke-linecap="round"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
+            <circle cx="27.5" cy="27.5" r="26.8106" stroke="#332C2F" stroke-width="1.37885"/>
+            <path d="M30.335 34.4707L23.8927 28.571C23.6512 28.3498 23.6545 27.968 23.8999 27.751L30.335 22.0611" stroke="#332C2F" stroke-width="1.37885" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="swiper-button-next">
-          <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42" fill="none">
-            <circle cx="21" cy="21" r="20.4735" transform="matrix(-1 0 0 1 42 0)" stroke="#332C2F" stroke-width="1.05294"/>
-            <path d="M19.1895 15.7939L24.109 20.2992C24.2934 20.4681 24.2909 20.7596 24.1035 20.9253L19.1895 25.2704" stroke="#332C2F" stroke-width="1.05294" stroke-linecap="round"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="56" height="55" viewBox="0 0 56 55" fill="none">
+            <circle cx="27.5" cy="27.5" r="26.8106" transform="matrix(-1 0 0 1 55.6436 0)" stroke="#332C2F" stroke-width="1.37885"/>
+            <path d="M25.0605 20.6826L31.5028 26.5823C31.7443 26.8036 31.741 27.1853 31.4956 27.4023L25.0605 33.0922" stroke="#332C2F" stroke-width="1.37885" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
