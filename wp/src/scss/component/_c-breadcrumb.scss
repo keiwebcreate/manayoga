@@ -4,9 +4,18 @@
     padding: get_vw(12) get_vw(24);
     font-size: get_vw(15);
     line-height: 1.6;
+    transition: opacity 0.3s;
 
     &.margin {
-        margin-block-start: 55px;
+        margin-block-start: get_vw(55);
+    }
+
+    a {
+        @media (any-hover: hover) {
+          &:hover {
+            opacity: 0.6;
+          }
+        }
     }
 
     span {

@@ -136,7 +136,7 @@
             display: block;
             padding-block: get_vw(20);
             padding-inline-start: get_vw(12);
-            border-bottom: 1px solid var(--foundation-red-normal-hover, #E3ACBC);
+            border-bottom: 1px solid #E3ACBC;
             
             @include mq('md') {
                 display: flex;

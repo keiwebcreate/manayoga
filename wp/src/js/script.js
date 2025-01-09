@@ -33,5 +33,11 @@ jQuery(document).ready(function($) {
     );
 	});
 
-	
+
+	// ハンバーガー制御
+  $('.hamburger').on("click", function() {
+    const isOpen = $("html, body, .hamburger").toggleClass('js-open').hasClass('js-open');
+    $(this).attr("aria-expanded", isOpen);
+    $(".l-header__nav").slideToggle(300);
+  });
 });

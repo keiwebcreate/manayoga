@@ -6,7 +6,7 @@
     aspect-ratio: 280 / 147;
     background: linear-gradient(90deg, #FCBFD1 0%, #E0C8E9 100%);
     position: relative;
-    margin-block-start: rem(55);
+    margin-block-start: get_vw(55);
 
     @include mq('md') {
         width: clamp_vw(576, 872, 768, 1440);

@@ -19,10 +19,12 @@
       </div>
     </div>
     <div class="p-top-fv__scroll u-hidden-pc">
-      SCROLL
-      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="31" viewBox="0 0 7 31" fill="none">
-        <path d="M1 23.1017L6 29L6 7.15256e-07" stroke="#332C2F"/>
-      </svg>
+      <p>
+        SCROLL
+        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="31" viewBox="0 0 7 31" fill="none">
+          <path d="M1 23.1017L6 29L6 7.15256e-07" stroke="#332C2F"/>
+        </svg>
+      </p>
     </div>
     <div class="p-top-fv__text">
       <p>
