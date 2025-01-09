@@ -266,44 +266,157 @@
             gap: rem(80);
         }
 
-        a {
+        .prev-post,
+        .next-post {
+            width: get_vw(55);
+            font-size: get_vw(15);
+            font-weight: 700;
+            line-height: normal;
+            position: relative;
+
+            @include mq('md') {
+                width: rem(55);
+                font-size: rem(15);
+            }
+        }
+
+        .prev-post {
+            padding-left: get_vw(21);
+
+            @include mq('md') {
+                padding-left: rem(21);
+            }
+
+            a {
+                span {
+                    &::before {
+                        content: "";
+                        width: calc(5px / 375px * 100vw);
+                        height: calc(10px / 375px * 100vw);
+                        background: url(../img/single-interview/icon-prev.webp) no-repeat center center /
+                            contain;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        translate: 0 -50%;
+                    
+                        @include mq("md") {
+                            width: 5px;
+                            height: 10px;
+                        }
+                    }
+                
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 66%;
+                        height: 1px;
+                        background-color: map-get($map: $color, $key: text);
+                        bottom: -2px;
+                        right: 0;
+                        scale: 0;
+                        transition: scale 0.1s ease;
+                        transform-origin: left center;
+                    }
+                }
+
+                @media (any-hover: hover) {
+                  &:hover {
+                    span {
+                        &::after {
+                            scale: 1;
+                            transform-origin: right center;
+                            transition: scale 0.5s ease;
+                        }
+                    }
+                  }
+                }
+            }
+        }
+
+        .next-post {
+            padding-right: get_vw(21);
+
+            @include mq('md') {
+                padding-right: rem(21);
+            }
+            
+            a {
+                span {
+                    &::before {
+                        content: "";
+                        width: calc(5px / 375px * 100vw);
+                        height: calc(10px / 375px * 100vw);
+                        background: url(../img/single-interview/icon-next.webp) no-repeat center center /
+                            contain;
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        translate: 0 -50%;
+                    
+                        @include mq("md") {
+                            width: 5px;
+                            height: 10px;
+                        }
+                    }
+                
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 66%;
+                        height: 1px;
+                        background-color: map-get($map: $color, $key: text);
+                        bottom: -2px;
+                        left: 0;
+                        scale: 0;
+                        transition: scale 0.1s ease;
+                        transform-origin: left center;
+                    }
+                }
+
+                @media (any-hover: hover) {
+                  &:hover {
+                    span {
+                        &::after {
+                            scale: 1;
+                            transform-origin: left center;
+                            transition: scale 0.5s ease;
+                        }
+                    }
+                  }
+                }
+            }
+        }
+
+        .all-posts {
             font-size: get_vw(15);
             font-weight: 500;
-            line-height: normal;
-
-            svg {
-                width: get_vw(8);
-                vertical-align: 0;
-            }
-
-            &.prev-post {
-                svg {
-                    margin-right: get_vw(16);
-                }
-            }
-            &.next-post {
-                svg {
-                    margin-left: get_vw(16);
-                }
-            }
+            transition: opacity 0.3s;
+            position: relative;
 
             @include mq('md') {
                 font-size: rem(15);
+            }
 
-                svg {
-                    width: rem(8);
-                }
-
-                &.prev-post {
-                    svg {
-                        margin-right: rem(16);
+            @media (any-hover: hover) {
+                &:hover {
+                    &::after {
+                        scale: 1;
+                        transition: scale 0.5s ease;
                     }
                 }
-                &.next-post {
-                    svg {
-                        margin-left: rem(16);
-                    }
-                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                background-color: map-get($map: $color, $key: text);
+                bottom: -2px;
+                left: 0;
+                scale: 0;
+                transition: scale 0.1s ease;
             }
         }
     }

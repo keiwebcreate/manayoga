@@ -3,7 +3,7 @@
 .l-header {
     position: fixed;
     width: 100vw;
-    height: 55px;
+    height: get_vw(55);
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -25,16 +25,18 @@
     }
     
     &__logo {
-        width: 90px;
+        width: get_vw(90);
 
         a {
             display: inline-block;
             width: 100%;
             height: 100%;
-            transition: all 0.3s;
+            transition: opacity 0.3s;
 
-            &:hover {
+            @media (any-hover: hover) {
+              &:hover {
                 opacity: 0.6;
+              }
             }
         }
 
@@ -44,31 +46,64 @@
     }
     
     .hamburger {
-        height: 49px;
-        width: 49px;
+        width: get_vw(49);
+        height: get_vw(49);
         background-color: map-get($color, 'base');
         border: 1.386px solid map-get($color, 'accent');
         border-radius: 50%;
         cursor: pointer;
         position: relative;
         margin-inline-start: auto;
+        transition: all 0.3s;
 
         span {
-            width: 31.41px;
-            height: 2.513px;
+            width: get_vw(31.41);
+            height: get_vw(2.5);
             background-color: map-get($color, 'accent');
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
 
             &:nth-child(1) {
-                top: 15.374px;
+                top: get_vw(15);
             }
             &:nth-child(2) {
-                top: 23.114px;
+                top: get_vw(23.114);
             }
             &:nth-child(3) {
-                top: 30.854px;
+                top: get_vw(30.854);
+            }
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+
+        &.js-open {
+            position: absolute;
+            top: get_vw(14);
+            right: get_vw(24);
+            border: none;
+            background-color: #E0C8E970;
+            z-index: 100;
+
+            span {
+                
+                &:nth-child(1) {
+                    top: get_vw(23.114);
+                    left: get_vw(9);
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    top: get_vw(23.114);
+                    left: get_vw(9);
+                    transform: rotate(315deg);
+                }
             }
         }
 
@@ -90,61 +125,167 @@
                     top: 35.96px;
                 }
             }
+
+            &.js-open {
+                position: relative;
+                top: 0;
+                right: 0;
+                border: none;
+                background-color: #E0C8E970;
+                z-index: 100;
+    
+                span {
+                    
+                    &:nth-child(1) {
+                        top: 27.9px;
+                        left: 10px;
+                        transform: rotate(45deg);
+                    }
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+                    &:nth-child(3) {
+                        top: 27.9px;
+                        left: 10px;
+                        transform: rotate(315deg);
+                    }
+                }
+            }
         }
     }
     
     &__nav {
         display: none;
+        position: absolute;
+        width: 100vw;
+        background-color: map-get($color, 'base');
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-inline: get_vw(80) get_vw(40);
+        text-align: center;
+        z-index: 20;
+
+        @include mq('md') {
+            width: 375px;
+            left: auto;
+            right: 0;
+            padding-inline: rem(80) rem(40);
+            transform: none;
+        }
     }
     
     &__nav-cta {
-    
+        color: map-get($color, 'base');
+        display: inline-block;
+        width: get_vw(200);
+        padding: get_vw(13) get_vw(19);
+        background-color: map-get($color, 'accent');
+        border-radius: get_vw(8);
+        font-size: get_vw(20);
+        font-weight: 500;
+
+        svg {
+            vertical-align: get_vw(2);
+            margin-inline-start: get_vw(8);
+            width: get_vw(16);
+        }
+
+        @include mq('md') {
+            width: 200px;
+            padding: rem(13) rem(19);
+            border-radius: 8px;
+            font-size: rem(20);
+
+            svg {
+                vertical-align: 2px;
+                margin-inline-start: 8px;
+                width: 16px;
+            }
+        }
     }
     
     &__nav-items {
-    
-		li {
+        width: get_vw(200);
+        text-align: left;
+        display: flex;
+        flex-wrap: wrap;
+        gap: get_vw(40);
+        margin-inline: auto;
+        margin-block: get_vw(40);
 
-			
-			.sub-menu {
-			
-			}
-		}
+        @include mq('md') {
+            width: 200px;
+            gap: rem(40);
+            margin-block: rem(40);
+        }
+
+        li {
+            width: 100%;
+            font-size: get_vw(24);
+            line-height: 1.8;
+            
+            .sub-menu {
+                margin-block-start: get_vw(12);
+                font-size: get_vw(20);
+            }
+
+            @include mq('md') {
+                font-size: rem(24);
+
+                .sub-menu {
+                    margin-block-start: rem(12);
+                    font-size: rem(20);
+                }
+            }
+        }
+    
     }
     
     &__nav-logo {
-    
+        display: inline-block;
+        width: get_vw(200);
+        height: 100%;
+
+        @include mq('md') {
+            width: 200px;
+        }
     }
     
     &__cta {
-        width: 135px;
+        width: get_vw(135);
         display: inline-block;
-        margin-inline-start: rem(12);
-        padding-block: rem(12);
+        margin-inline-start: get_vw(12);
+        padding-block: get_vw(12);
         text-align: center;
         background-color: map-get($color, 'accent');
-        border-radius: 5.497px;
+        border-radius: get_vw(5.497);
+        border: none;
         color: map-get($color, 'base');
-        font-size: rem(10.307);
+        font-size: get_vw(10.307);
         line-height: normal;
         transition: all 0.3s;
 
         span {
-            margin-inline-start: rem(6.87);
+            margin-inline-start: get_vw(6.87);
             svg {
-                width: 11px;
-                vertical-align: 0
+                width: get_vw(11);
+                vertical-align: 0;
             }
         }
 
-        &:hover {
+        @media (any-hover: hover) {
+          &:hover {
             background-color: map-get($color, 'base');
             color: map-get($color, 'accent');
+            border: 2px solid map-get($color, 'accent');
+            
             svg {
                 path {
                     fill: map-get($color, 'accent');
                 }
             }
+          }
         }
 
         @include mq('md') {
@@ -152,8 +293,8 @@
             font-weight: 500;
             line-height: 1.5;
             width: 196px;
-            padding-block: rem(15);
             border-radius: var(--magin-3, 8px);
+            padding-block: rem(15);
             margin-inline-start: rem(30);
             
             span {

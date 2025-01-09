@@ -11,9 +11,25 @@
     position: relative;
     transition: all 0.3s;
 
+    @media (any-hover: hover) {
+      &:hover {
+        svg {
+          margin-inline-start: get_vw(10);
+        }
+      }
+    }
+
     @include mq('md') {
       font-size: rem(20);
       margin-inline-start: rem(30);
+
+      @media (any-hover: hover) {
+        &:hover {
+          svg {
+            margin-inline-start: rem(12);
+          }
+        }
+      }
     }
 
     &::before {
@@ -45,18 +61,6 @@
       @include mq('md') {
         margin-inline-start: rem(6);
         width: rem(8);
-      }
-    }
-
-    &:hover {
-      svg {
-        margin-inline-start: get_vw(10);
-      }
-
-      @include mq('md') {
-        svg {
-          margin-inline-start: rem(12);
-        }
       }
     }
   }
@@ -192,9 +196,14 @@
         font-size: get_vw(12);
         line-height: normal;
         letter-spacing: 1.2px;
-        writing-mode: vertical-lr;
-        margin-block: auto;
+        text-align: center;
         margin-inline: get_vw(3) get_vw(8);
+        
+        p {
+          margin-block: auto;
+          writing-mode: vertical-lr;
+          display: inline-block;
+        }
 
         svg {
           vertical-align: get_vw(-3);
@@ -922,6 +931,12 @@
             height: get_vw(42);
           }
 
+          @media (any-hover: hover) {
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+
           &::after {
             content: none;
           }
@@ -947,8 +962,32 @@
           padding-inline-end: calc(50vw - 670px);
         }
 
-        .article-img {
+      }
 
+      &__slide {
+
+        a {
+          @media (any-hover: hover) {
+            &:hover {
+              .article-img {
+                img {
+                  scale: 1.2;
+                }
+              }
+            }
+          }
+        }
+        
+        .article-img {
+          img {
+            border-radius: get_vw(17.52);
+            aspect-ratio: 380 / 200;
+            object-fit: cover;
+
+            @include mq('md') {
+              border-radius: 20px;
+            }
+          }
         }
         
         .article-date {
@@ -977,9 +1016,6 @@
             margin-block-start: rem(4);
           }
         }
-      }
-
-      &__slide {
 
         @include mq('md') {
           width: 380px;

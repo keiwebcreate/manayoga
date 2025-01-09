@@ -2,6 +2,10 @@
 
 html {
   overflow-x: hidden;
+  
+  &.js-open {
+    overflow-y: hidden;
+  }
 }
 
 body {
@@ -13,6 +17,10 @@ body {
   color: map-get($color, text);
   background-color: map-get($color, 'base');
   overflow-x: hidden;
+
+  &.js-open {
+    overflow-y: hidden;
+  }
 
   @include mq(md) {
     letter-spacing: normal;
