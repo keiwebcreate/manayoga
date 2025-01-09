@@ -980,10 +980,13 @@
         
         .article-img {
           overflow: hidden;
+          border-radius: get_vw(17.52);
+
           img {
             border-radius: get_vw(17.52);
             aspect-ratio: 380 / 200;
             object-fit: cover;
+            transition: scale 0.3s;
 
             @include mq('md') {
               border-radius: 20px;
