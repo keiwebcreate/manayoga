@@ -162,7 +162,7 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        padding-inline: get_vw(80) get_vw(40);
+        padding-block: min(10dvh, get_vw(80)) min(5dvh, get_vw(40));
         text-align: center;
         z-index: 20;
 
@@ -170,37 +170,55 @@
             width: 375px;
             left: auto;
             right: 0;
-            padding-inline: rem(80) rem(40);
+            padding-block: min(10dvh, rem(80)) min(5dvh, rem(40));
             transform: none;
         }
     }
     
     &__nav-cta {
         color: map-get($color, 'base');
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: get_vw(200);
-        padding: get_vw(13) get_vw(19);
+        max-width: 90%;
+        margin-inline: auto;
+        padding: min(1dvh, get_vw(13)) get_vw(19);
         background-color: map-get($color, 'accent');
+        border: 2px solid map-get($color, 'accent');
         border-radius: get_vw(8);
-        font-size: get_vw(20);
+        font-size: min(2.5dvh, get_vw(20));
         font-weight: 500;
+        transition: all 0.3s;
 
         svg {
-            vertical-align: get_vw(2);
             margin-inline-start: get_vw(8);
-            width: get_vw(16);
+            height: min(2dvh, get_vw(10));
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+              background-color: map-get($color, 'base');
+              color: map-get($color, 'accent');
+              border: 2px solid map-get($color, 'accent');
+              
+              svg {
+                  path {
+                      fill: map-get($color, 'accent');
+                  }
+              }
+            }
         }
 
         @include mq('md') {
             width: 200px;
-            padding: rem(13) rem(19);
+            padding: min(1dvh, rem(13)) rem(19);
             border-radius: 8px;
-            font-size: rem(20);
+            font-size: min(2.5dvh, rem(20));
 
             svg {
-                vertical-align: 2px;
                 margin-inline-start: 8px;
-                width: 16px;
+                height: min(2dvh, 10px);
             }
         }
     }
@@ -210,32 +228,42 @@
         text-align: left;
         display: flex;
         flex-wrap: wrap;
-        gap: get_vw(40);
+        gap: min(5dvh, get_vw(40));
         margin-inline: auto;
-        margin-block: get_vw(40);
+        margin-block: min(5dvh, get_vw(40));
 
         @include mq('md') {
             width: 200px;
-            gap: rem(40);
-            margin-block: rem(40);
+            gap: min(5dvh, rem(40));
+            margin-block: min(5dvh, rem(40));
         }
 
         li {
             width: 100%;
-            font-size: get_vw(24);
+            font-size: min(3dvh, get_vw(24));
             line-height: 1.8;
             
             .sub-menu {
-                margin-block-start: get_vw(12);
-                font-size: get_vw(20);
+                margin-block-start: min(1dvh, get_vw(12));
+                font-size: min(2.5dvh, get_vw(20));
+            }
+
+            a {
+                transition: opacity 0.3s;
+
+                @media (any-hover: hover) {
+                  &:hover {
+                    opacity: 0.6;
+                  }
+                }
             }
 
             @include mq('md') {
-                font-size: rem(24);
+                font-size: min(3dvh, rem(24));
 
                 .sub-menu {
-                    margin-block-start: rem(12);
-                    font-size: rem(20);
+                    margin-block-start: min(1dvh, rem(12));
+                    font-size: min(2.5dvh, rem(20));
                 }
             }
         }
@@ -245,7 +273,21 @@
     &__nav-logo {
         display: inline-block;
         width: get_vw(200);
-        height: 100%;
+        aspect-ratio: 81.7 / 58.55;
+        height: auto;
+        max-height: 13dvh;
+        
+        transition: opacity 0.3s;
+
+        @media (any-hover: hover) {
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+
+        img {
+            height: 100%;
+        }
 
         @include mq('md') {
             width: 200px;

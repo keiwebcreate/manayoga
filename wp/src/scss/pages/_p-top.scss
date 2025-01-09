@@ -653,6 +653,7 @@
           .entry-link {
             font-size: get_vw(15);
             line-height: normal;
+            display: inline-block;
             svg {
               display: block;
               width: get_vw(134);
@@ -982,11 +983,15 @@
           overflow: hidden;
           border-radius: get_vw(17.52);
 
+          @include mq('md') {
+            border-radius: 20px;
+          }
+
           img {
             border-radius: get_vw(17.52);
             aspect-ratio: 380 / 200;
             object-fit: cover;
-            transition: scale 0.3s;
+            transition: scale 0.5s;
 
             @include mq('md') {
               border-radius: 20px;
