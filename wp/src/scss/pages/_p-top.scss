@@ -979,6 +979,7 @@
         }
         
         .article-img {
+          overflow: hidden;
           img {
             border-radius: get_vw(17.52);
             aspect-ratio: 380 / 200;
