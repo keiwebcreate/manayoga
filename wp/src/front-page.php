@@ -290,7 +290,7 @@
 
   <section class="p-top__blog">
     <div class="p-top-blog__inner">
-    <h2 class="p-top-blog__title">
+      <h2 class="p-top-blog__title">
         <span class="title-en">
           Blog
         </span>

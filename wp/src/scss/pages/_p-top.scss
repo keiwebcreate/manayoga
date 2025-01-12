@@ -208,6 +208,8 @@
         svg {
           vertical-align: get_vw(-3);
           margin-block-start: 2px;
+          width: get_vw(7);
+          height: get_vw(31);
         }
       }
       
@@ -238,7 +240,7 @@
 
   
   &__about {
-    
+     
 
     .p-top-about {
       &__inner {
@@ -654,15 +656,32 @@
             font-size: get_vw(15);
             line-height: normal;
             display: inline-block;
+            transition: text-shadow 0.3s;
             svg {
               display: block;
               width: get_vw(134);
+              transition: width 0.3s;
             }
 
+            @media (any-hover: hover) {
+              &:hover {
+                svg {
+                  width: get_vw(150);
+                }
+              }
+            }
             @include mq('md') {
               font-size: rem(13);
               svg {
                 width: rem(134);
+              }
+
+              @media (any-hover: hover) {
+                &:hover {
+                  svg {
+                    width: 150px;
+                  }
+                }
               }
             }
           }
@@ -686,6 +705,24 @@
             display: inline-block;
             width: 100%;
             height: 100%;
+
+            @media (any-hover: hover) {
+              &:hover {
+                svg {
+                  width: get_vw(180);
+                }
+              }
+            }
+
+            @include mq('md') {
+              @media (any-hover: hover) {
+                &:hover {
+                  svg {
+                    width: 250px;
+                  }
+                }
+              }
+            }
           }
 
           img {
@@ -712,6 +749,7 @@
             svg {
               display: block;
               width: get_vw(160);
+              transition: width 0.3s;
             }
 
             @include mq('md') {
