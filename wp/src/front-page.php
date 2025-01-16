@@ -1,42 +1,48 @@
 <?php get_header(); ?>
 
-<div class="intro-overlay"></div>
+<div class="intro-overlay">
+  <p>
+    あなたの<span>好き</span>が<br>
+    未来につながる
+  </p>
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-img-fv.webp" alt="">
+</div>
 
-<div class="l-main p-top">
-  <div class="p-top__fv">
-    <div class="p-top-fv__wrap">
-      <div class="p-top-fv__message">
-        <p>
-          あなたの<span>好き</span>が<br>
-          未来につながる
-        </p>
-        <p>
-          <span>私が私らしく</span>働ける場所
-        </p>
-      </div>
-      <div class="p-top-fv__image">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-img-fv.webp" alt="">
-      </div>
-    </div>
-    <div class="p-top-fv__scroll u-hidden-pc">
+<div class="p-top__fv">
+  <div class="p-top-fv__wrap">
+    <div class="p-top-fv__message">
       <p>
-        SCROLL
-        <svg xmlns="http://www.w3.org/2000/svg" width="7" height="31" viewBox="0 0 7 31" fill="none">
-          <path d="M1 23.1017L6 29L6 7.15256e-07" stroke="#332C2F"/>
-        </svg>
+        あなたの<span>好き</span>が<br>
+        未来につながる
+      </p>
+      <p>
+        <span>私が私らしく</span>働ける場所
       </p>
     </div>
-    <div class="p-top-fv__text">
-      <p>
-        ヨガが好きな気持ちを、もっと大きなものに変えてみませんか？<br>
-        あなたの『好き』を大切にしながら、日々成長し、誰かの人生をより良い方向へ導く未来を一緒に描いていきましょう。
-      </p>
+    <div class="p-top-fv__image">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-img-fv.webp" alt="">
     </div>
   </div>
+  <div class="p-top-fv__scroll u-hidden-pc">
+    <p>
+      SCROLL
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="31" viewBox="0 0 7 31" fill="none">
+        <path d="M1 23.1017L6 29L6 7.15256e-07" stroke="#332C2F"/>
+      </svg>
+    </p>
+  </div>
+  <div class="p-top-fv__text">
+    <p>
+      ヨガが好きな気持ちを、もっと大きなものに変えてみませんか？<br>
+      あなたの『好き』を大切にしながら、日々成長し、誰かの人生をより良い方向へ導く未来を一緒に描いていきましょう。
+    </p>
+  </div>
+</div>
 
+<div class="l-main p-top">
   <section class="p-top__about">
     <div class="p-top-about__inner l-inner">
-      <h2 class="p-top-about__title">
+      <h2 class="p-top-about__title animation">
         <span class="title-en">
           About
         </span>
@@ -44,9 +50,9 @@
           マナヨガについて
         </span>
       </h2>
-      <div class="p-top-about__wrap">
+      <div class="p-top-about__wrap animation">
         <div class="p-top-about__image">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-img-about.webp" alt="">
+          <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-img-about.webp" alt="">
         </div>
         <div class="p-top-about__text">
           <p class="head">
@@ -59,16 +65,13 @@
           </p>
           <a href="<?php echo home_url('/about'); ?>" class="button p-top__button">
             Read more
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-              <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
-            </svg>
           </a>
         </div>
       </div>
     </div>
 
     <div class="p-top-environment__inner l-inner">
-      <h2 class="p-top-environment__title">
+      <h2 class="p-top-environment__title animation">
         <span class="title-en">
           Environment
         </span>
@@ -76,9 +79,9 @@
           働く環境
         </span>
       </h2>
-      <div class="p-top-environment__wrap">
+      <div class="p-top-environment__wrap animation">
         <div class="p-top-environment__image">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-img-env.webp" alt="">
+          <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/img/top/top-img-env.webp" alt="">
         </div>
         <div class="p-top-environment__text">
           <p class="head">
@@ -91,9 +94,6 @@
           </p>
           <a href="<?php echo home_url('/environment'); ?>" class="button p-top__button">
             Read more
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-              <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
-            </svg>
           </a>
         </div>
       </div>
@@ -102,7 +102,7 @@
 
   <section class="p-top__job">
     <div class="p-top-job__inner">
-      <h2 class="p-top-job__title">
+      <h2 class="p-top-job__title animation">
         <span class="title-en">
           Job type
         </span>
@@ -112,7 +112,7 @@
       </h2>
 
       <div class="p-top-job__items">
-        <div class="p-top-job__item">
+        <div class="p-top-job__item animation slideright">
           <div class="job-item__detail">
             <div class="title">
               ヨガインストラクター
@@ -151,7 +151,7 @@
           ?>
           </div>
         </div>
-        <div class="p-top-job__item">
+        <div class="p-top-job__item animation slideright">
           <div class="job-item__detail">
             <div class="title">
               企画・営業
@@ -190,7 +190,7 @@
           ?>
           </div>
         </div>
-        <div class="p-top-job__item">
+        <div class="p-top-job__item animation slideright">
           <div class="job-item__detail">
             <div class="title">
               受付・バックオフィス
@@ -235,7 +235,7 @@
 
   <section class="p-top__faq">
     <div class="p-top-faq__inner l-inner">
-      <h2 class="p-top-faq__title">
+      <h2 class="p-top-faq__title animation fade">
         <span class="title-en">
           FAQ
         </span>
@@ -243,7 +243,7 @@
           よくある質問
         </span>
       </h2>
-      <div class="p-top-faq__items">
+      <div class="p-top-faq__items animation fade">
         <?php   
           // カスタム投稿タイプ "faq" の取得
           $args = array(
@@ -277,12 +277,9 @@
           wp_reset_postdata();
         ?>
       </div>
-      <div class="p-top-faq__button">
+      <div class="p-top-faq__button  animation fade">
         <a href="<?php echo get_post_type_archive_link('faq'); ?>" class="button p-top__button">
           Read more
-          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-            <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
-          </svg>
         </a>
       </div>
     </div>
@@ -290,7 +287,7 @@
 
   <section class="p-top__blog">
     <div class="p-top-blog__inner">
-      <h2 class="p-top-blog__title">
+      <h2 class="p-top-blog__title animation">
         <span class="title-en">
           Blog
         </span>
@@ -300,7 +297,7 @@
       </h2>
 
       <div class="p-top-blog__card-wrap">
-        <div class="p-top-blog__swiper swiper">
+        <div class="p-top-blog__swiper swiper animation slideleft">
           <div class="swiper-wrapper">
             <?php   
              // スマホかどうかをチェック（サーバー側で判定する例）
@@ -344,13 +341,13 @@
           </div>
         </div>
 
-        <div class="swiper-button-prev">
+        <div class="swiper-button-prev animation">
           <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" viewBox="0 0 55 55" fill="none">
             <circle cx="27.5" cy="27.5" r="26.8106" stroke="#332C2F" stroke-width="1.37885"/>
             <path d="M30.335 34.4707L23.8927 28.571C23.6512 28.3498 23.6545 27.968 23.8999 27.751L30.335 22.0611" stroke="#332C2F" stroke-width="1.37885" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="swiper-button-next">
+        <div class="swiper-button-next animation">
           <svg xmlns="http://www.w3.org/2000/svg" width="56" height="55" viewBox="0 0 56 55" fill="none">
             <circle cx="27.5" cy="27.5" r="26.8106" transform="matrix(-1 0 0 1 55.6436 0)" stroke="#332C2F" stroke-width="1.37885"/>
             <path d="M25.0605 20.6826L31.5028 26.5823C31.7443 26.8036 31.741 27.1853 31.4956 27.4023L25.0605 33.0922" stroke="#332C2F" stroke-width="1.37885" stroke-linecap="round"/>
@@ -358,12 +355,9 @@
         </div>
       </div>
 
-      <div class="p-top-blog__button">
+      <div class="p-top-blog__button animation">
         <a href="<?php echo get_category_link(get_cat_ID('blog')) ?>" class="button p-top__button">
           Read more
-          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
-            <path d="M1.47949 1.74219L6.34092 5.98223C6.47611 6.10014 6.47428 6.31084 6.33707 6.42639L1.47949 10.517" stroke="#332C2F" stroke-width="1.46247" stroke-linecap="square"/>
-          </svg>
         </a>
       </div>
       

@@ -13,8 +13,62 @@
     addEventListener("resize", switchViewport, false);
     switchViewport();
 })();
+
+// jQuery(function ($) {
+//   // ウィンドウの高さを取得し、ローディング画面を表示
+//   var h = $(window).height();
+//   $('.intro-overlay').height(h).show();
+//   var hasWaitedThreeSeconds = false; // 3秒経過フラグ
+
+//   // 全ての読み込みが完了したらローディング画面を非表示
+//   $(window).on('load', function () {
+//     checkAndHideLoadingScreen();
+//   });
+
+//   // サイト読み込み開始から3秒後にフラグを設定
+//   setTimeout(function () {
+//     hasWaitedThreeSeconds = true;
+//     checkAndHideLoadingScreen();
+//   }, 3000);
+
+//   // ローディング画面を非表示にする関数
+//   function checkAndHideLoadingScreen() {
+//     if (hasWaitedThreeSeconds && document.readyState === "complete") {
+//       $('.intro-overlay').delay(300).fadeOut(500);
+//     }
+//   }
+// });
+
   
 jQuery(document).ready(function($) {
+  // 下層タイトル表示アニメーション付与
+  $(window).on("load", function () {
+    if ($(".c-page-title").length) {
+      $(".c-page-title").addClass("js-load");
+    }
+  });
+
+
+  // トップセクション出現アニメーション付与
+  function checkAnimation() {
+    $('.animation').each(function () {
+      const elementTop = $(this).offset().top;
+      const scrollTop = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      // 要素が画面内に入ったらアニメーションを発動
+      if (scrollTop + windowHeight > elementTop + 100) {
+        $(this).addClass('animated');
+      }
+    });
+  }
+  // 初回チェック
+  checkAnimation();
+  // スクロールイベントで再チェック
+  $(window).on('scroll', function () {
+    checkAnimation();
+  });
+
 
   // スムーススクロール
   $('a[href^="#"]').on("click", function (e) {

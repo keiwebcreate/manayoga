@@ -87,7 +87,11 @@
 
 .p-blog__link {
   display: block;
-    transition: opacity 0.3s;
+  .p-blog-card__thumbnail {
+    img {
+      transition: scale 0.5s;
+    }
+  }
 
 @media (any-hover: hover) {
   &:hover {
