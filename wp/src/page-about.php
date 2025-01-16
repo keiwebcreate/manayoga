@@ -64,7 +64,7 @@
                 </h3>
                 <div class="p-about-CEO-message__image">
                   <img
-                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/about/about-photo-03.webp"
+                    src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/about/about-photo-03-01.webp"
                     alt="代表取締役の男性の画像" width="1054" height="704" />
                 </div>
               </div>
