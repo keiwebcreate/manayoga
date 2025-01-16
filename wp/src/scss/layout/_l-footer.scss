@@ -30,7 +30,7 @@
         a {
             width: get_vw(260);
             display: inline-block;
-            padding-block: get_vw(17);
+            padding-block: get_vw(15);
             text-align: center;
             border: 2px solid map-get($color, 'accent');
             background-color: map-get($color, 'accent');
@@ -85,7 +85,7 @@
         @include mq('md') {
             background: url(../img/common/bg-footer-pc.webp) no-repeat 80% center / cover;
             padding-inline: rem(50);
-            padding-block: rem(76) rem(51);
+            padding-block: rem(56) rem(51);
         }
     }
     
@@ -97,6 +97,7 @@
         @include mq('lg') {
             max-width: 909px;
             justify-content: space-between;
+            align-items: center;
             margin-inline: auto;
         }
     }
@@ -184,7 +185,9 @@
                 @include mq('lg') {
                     margin-block-start: rem(8);
                     margin-inline-start: 0;
-                    font-size: rem(14);
+                    a {
+                        font-size: rem(14);
+                    }
                 }
             }
         }
@@ -320,7 +323,7 @@
         }
 
         @include mq('md') {
-            margin-block-start: rem(45);
+            margin-block-start: rem(50);
             gap: rem(35);
 
             a {

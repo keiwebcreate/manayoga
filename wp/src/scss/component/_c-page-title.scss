@@ -7,6 +7,25 @@
     background: linear-gradient(90deg, #FCBFD1 0%, #E0C8E9 100%);
     position: relative;
     margin-block-start: get_vw(55);
+    opacity: 0;
+
+    &.js-load {
+        opacity: 1;
+        clip-path: inset(0 100% 0 0);
+        //四角形を作るclip-path
+        //clip-path: inset(四角形の各頂点から中に入る距離 round 角丸半径)
+        //roundは無くても良い
+        animation: 1.0s ease-in-out forwards insetAnimation;
+
+        @keyframes insetAnimation {
+            0% {
+            clip-path: inset(0 100% 0 0);
+            }
+            100% {
+            clip-path: inset(0 0 0 0);
+            }
+        }
+    }
 
     @include mq('md') {
         width: clamp_vw(576, 872, 768, 1440);

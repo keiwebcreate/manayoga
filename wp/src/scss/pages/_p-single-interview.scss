@@ -33,7 +33,7 @@
         }
         
         .head {
-            padding: get_vw(12) get_vw(20);
+            padding: get_vw(12) get_vw(19) get_vw(12) get_vw(20);
             background-color: map-get($color, 'base');
             font-size: get_vw(24);
             font-weight: 500;

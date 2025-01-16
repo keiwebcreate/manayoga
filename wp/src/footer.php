@@ -6,11 +6,6 @@
 		</p>
 		<a href="<?php echo esc_url(home_url('/recruitment')) ?>">
 			ENTRY
-			<span>
-				<svg xmlns="http://www.w3.org/2000/svg" width="19" height="12" viewBox="0 0 19 12" fill="none">
-					<path d="M1.5 5.25C1.08579 5.25 0.75 5.58579 0.75 6C0.75 6.41421 1.08579 6.75 1.5 6.75V5.25ZM18.0303 6.53033C18.3232 6.23744 18.3232 5.76256 18.0303 5.46967L13.2574 0.696699C12.9645 0.403806 12.4896 0.403806 12.1967 0.696699C11.9038 0.989593 11.9038 1.46447 12.1967 1.75736L16.4393 6L12.1967 10.2426C11.9038 10.5355 11.9038 11.0104 12.1967 11.3033C12.4896 11.5962 12.9645 11.5962 13.2574 11.3033L18.0303 6.53033ZM1.5 6.75H17.5V5.25H1.5V6.75Z" fill="#F5F5F5"/>
-				</svg>
-			</span>
 		</a>
 	</div>
 	<?php endif; ?>
@@ -20,7 +15,7 @@
 				<h1 class="l-footer__logo">
 					<a href="<?php  echo esc_url(home_url()); ?>">
 						<!-- logo -->
-						 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="">
+						 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" alt="マナヨガリクルート">
 					</a>
 				</h1>
 				<div class="l-footer__link">

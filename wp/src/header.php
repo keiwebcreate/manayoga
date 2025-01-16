@@ -19,7 +19,7 @@
     <div class="l-header__inner">
       <h1 class="l-header__logo">
         <a href="<?php  echo esc_url(home_url()); ?>">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="マナヨガリクルート">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" alt="マナヨガリクルート">
         </a>
       </h1>
 
@@ -44,7 +44,7 @@
           ) );
         ?>
         <a class="l-header__nav-logo" href="<?php  echo esc_url(home_url()); ?>">
-          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.svg" alt="マナヨガリクルート">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/logo.webp" alt="マナヨガリクルート">
         </a>
       </nav>
 
