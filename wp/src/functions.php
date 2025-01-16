@@ -94,6 +94,19 @@ function is_mobile()
   return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
 };
 
+function is_tablet() {
+    // Checks for tablet devices like iPad mini
+    $useragents = array(
+        'iPad',                 // iPad mini を含む
+        'Android\.*Tablet',     // Android タブレット
+        'Silk\/.*Tablet',       // Amazon Silk タブレットブラウザ
+        'Kindle\/.*Tablet',     // Kindle タブレット
+    );
+    $pattern = '/' . implode('|', $useragents) . '/i'; // エスケープしたパターンを使用
+    return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
+}
+
+
 
 function mobile_posts_per_page($query)
 {

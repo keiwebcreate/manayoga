@@ -300,17 +300,17 @@
         <div class="p-top-blog__swiper swiper animation slideleft">
           <div class="swiper-wrapper">
             <?php   
-             // スマホかどうかをチェック（サーバー側で判定する例）
-              $is_mobile = wp_is_mobile(); // true: スマホ, false: PC
-
-              // 表示する投稿件数を条件で分ける
-              $posts_per_page = $is_mobile ? 3 : 6;
-
+              // スマホかどうかをチェック（サーバー側で判定する例）
+              if( wp_is_mobile() && !is_tablet() ){
+                $num = 3;
+              } else {
+                $num = 6;
+              }
               // カテゴリーで取得
               $args = array(
                 'post_type'      => 'post',          // 投稿タイプ
                 'category_name'  => 'blog',         // カテゴリスラッグ
-                'posts_per_page' => $posts_per_page,
+                'posts_per_page' => $num,
               );
               $query = new WP_Query($args);
 

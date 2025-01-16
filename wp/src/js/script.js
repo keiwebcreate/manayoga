@@ -42,11 +42,9 @@
   
 jQuery(document).ready(function($) {
   // 下層タイトル表示アニメーション付与
-  $(window).on("load", function () {
-    if ($(".c-page-title").length) {
-      $(".c-page-title").addClass("js-load");
-    }
-  });
+  if ($(".c-page-title").length) {
+    $(".c-page-title").addClass("js-load");
+  }
 
 
   // トップセクション出現アニメーション付与
